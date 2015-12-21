@@ -99,3 +99,9 @@ var messages = {
     'lt': 'Ar esate įsitikinę, kad norite atstatyti žaidimą į pradinę būseną?\n\nJūsų pasiekimai bus anuliuoti ir būsite nukreipti į žaidimo pradžią.'
   }
 };
+
+function getMessage(scope, lang) {
+    return messages[scope][lang];
+}
+
+export default getMessage;

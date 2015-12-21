@@ -1,13 +1,11 @@
 {
   "name": "flexboxfroggy",
-  "version": "1.0.0",
-  "description": "A game for learning CSS flexbox",
-  "main": "game.js",
+  "version": "0.0.0",
+  "description": "Hello Exponent!",
+  "main": "main.js",
+  "author": null,
   "dependencies": {
-    "animate.css": "^3.4.0",
-    "jquery": "^2.1.4"
-  },
-  "devDependencies": {},
-  "author": "Thomas Park",
-  "license": "MIT"
+    "react-native": "exponentjs/react-native#2015-11-13",
+    "react-native-dropdown": "0.0.6"
+  }
 }

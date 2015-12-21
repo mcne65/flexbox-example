@@ -112,3 +112,5 @@ var docs = {
     'lt': '<p>Nusako elastiškų elementų eilės tvarką.</p><code>&lt;integer&gt;</code>'
   }
 };
+
+export default docs;
