@@ -31,7 +31,7 @@ export default class Home extends Component {
       <View style={{padding: 15, flex: 1}}>
         <View style={styles.languageSpacer} />
         <Text style={styles.title}>{getMessage('title', language)}</Text>
-        <View style={{height: 250, flexDirection: 'row'}}>
+        <View style={{height: 175, flexDirection: 'row'}}>
           <View style={styles.imageContainer}>
             <Image 
               style={styles.image}
@@ -42,14 +42,21 @@ export default class Home extends Component {
           <View style={styles.imageContainer}>
             <Image 
               style={styles.image}
-              source={{uri: images.redLilly}}
+              source={{uri: images.greenLilly}}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.imageContainer}>
+            <Image 
+              style={styles.image}
+              source={{uri: images.redFrog}}
               resizeMode="contain"
             />
           </View>
             <View style={styles.imageContainer}>
             <Image 
               style={styles.image}
-              source={{uri: images.redFrog}}
+              source={{uri: images.redLilly}}
               resizeMode="contain"
             />
           </View>
@@ -94,16 +101,12 @@ export default class Home extends Component {
   }
 }
 
-/*
-
-
-        */
 
 let styles = StyleSheet.create({
   title: {
     fontSize: 42,
     fontWeight: 'bold',
-    color: 'rgba(255,255,255,.5)',
+    color: 'rgba(255,255,255,.8)',
     textAlign: 'center'
   },
   imageContainer: {

@@ -34,7 +34,7 @@ export default class LanguagePicker extends Component {
           optionListRef={() => this.refs.OPTIONLIST}
           defaultValue={language}
           onSelect={onLanguageChange}
-          style={styles.option}
+          style={styles.select}
         >
           {languages.map((lang) => <Option key={lang}>{lang}</Option>)}
         </Select>
@@ -49,6 +49,10 @@ export default class LanguagePicker extends Component {
 var styles = StyleSheet.create({
   option: {
     backgroundColor: 'rgba(255,255,255, .5)'
+  },
+  select: {
+    borderColor: 'rgba(0,0,0,0)',
+    borderWidth: 0
   },
   optionList: {
     backgroundColor: '#FFF'

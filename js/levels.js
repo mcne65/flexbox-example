@@ -17,7 +17,7 @@ var levels = [
     },
     board: 'g',
     style: {'justify-content': 'flex-end'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -38,7 +38,7 @@ var levels = [
     },
     board: 'gy',
     style: {'justify-content': 'center'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -59,7 +59,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'justify-content': 'space-around'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -80,7 +80,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'justify-content': 'space-between'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -101,7 +101,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'align-items': 'flex-end'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -122,7 +122,7 @@ var levels = [
     },
     board: 'g',
     style: {'justify-content': 'center', 'align-items': 'center'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -143,7 +143,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'justify-content': 'space-around', 'align-items': 'flex-end'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -164,7 +164,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flex-direction': 'column'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -185,7 +185,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flex-direction': 'column', 'justify-content': 'flex-end'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -207,7 +207,7 @@ var levels = [
     board: 'ggygg',
     selector: '> :nth-child(3)',
     style: {'align-self': 'flex-end'},
-    before: "#pond {\n  display: flex;\n  align-items: flex-start;\n}\n\n.yellow {\n",
+    before: "pond:{\n alignItems: flex-start;\n}\nyellow: {",
     after: "}"
   },
   {
@@ -228,7 +228,7 @@ var levels = [
     },
     board: 'ygggggr',
     style: {'flex-wrap': 'wrap'},
-    before: "#pond {\n  display: flex;\n",
+    before: "pond: {",
     after: "}"
   },
   {
@@ -249,51 +249,7 @@ var levels = [
     },
     board: 'gggggrrrrryyyyy',
     style: {'flex-direction': 'column', 'flex-wrap': 'wrap'},
-    before: "#pond {\n  display: flex;\n",
-    after: "}"
-  },
-  {
-    name: 'align-content 1',
-    instructions: {
-      'en': '<p>The frogs are spread all over the pond, but the lilypads are bunched at the top. You can use <code>align-content</code> to set how multiple lines are spaced apart from each other. This property takes the following values:</p><ul><li><code>flex-start</code>: Lines are packed at the top of the container.</li><li><code>flex-end</code>: Lines are packed at the bottom of the container.</li><li><code>center</code>: Lines are packed at the vertical center of the container.</li><li><code>space-between</code>: Lines display with equal spacing between them.</li><li><code>space-around</code>: Lines display with equal spacing around them.</li><li><code>stretch</code>: Lines are stretched to fit the container.</li></ul><p>This can be confusing, but <code>align-content</code> determines the spacing between lines, while <code>align-items</code> determines how the items as a whole are aligned within the container. When there is only one line, <code>align-content</code> has no effect.</p>',
-      'de': '<p>Die Fr&ouml;sche sind &uuml;ber den gesamten Teich verteilt, aber die Seerosenbl&auml;tter befinden sich alle am oberen Ende. Du kannst <code>align-content</code> verwenden, um festzulegen, wie der Abstand zwischen mehreren Zeilen aussehen soll. Diese Eigenschaft akzeptiert die folgenden Werte:</p><ul><li><code>flex-start</code>: Zeilen oben im Container ausrichten.</li><li><code>flex-end</code>: Zeilen unten im Container ausrichten.</li><li><code>center</code>: Zeilen in der Mitte des Containers ausrichten.</li><li><code>space-between</code>: Zeilen mit gleichm&auml;&szlig;igem Innenabstand anordnen.</li><li><code>space-around</code>: Zeilen mit gleichm&auml;&szlig;igem Au&szlig;enabstand anordnen.</li><li><code>stretch</code>: Zeilen strecken, um den Container auszuf&uuml;llen.</li></ul><p>Das kann etwas verwirrend sein, aber <code>align-content</code> beeinflusst den Abstand zwischen den Zeilen, wobei <code>align-items</code> festlegt, wie alle Elemente als Ganzes im Container angeordnet werden. Gibt es nur eine Zeile, so hat <code>align-content</code> keine Auswirkung.</p>',
-      'pt-br': '<p>Os sapos estão espalhados por toda a lagoa, mas as vitórias-régias estão agrupadas no topo. Você pode usar <code>align-content</code> para definir como múltiplas linhas devem ser espaçadas uma das outras. Essa propriedade recebe os seguintes valores:</p><ul><li><code>flex-start</code>: Linhas são agrupadas no topo do container.</li><li><code>flex-end</code>: Linhas são agrupadas no fundo do container.</li><li><code>center</code>:Linhas são agrupadas no centro vertical do container.</li><li><code>space-between</code>: Linhas são posicionadas com espaço igual entre elas.</li><li><code>space-around</code>: Linhas são posicionadas com espaço igual em torno delas.</li><li><code>stretch</code>: Linhas se esticam para preencher o container.</li></ul><p>Isso pode ser confuso, mas <code>align-content</code> determina o espaçamento entre linhas, enquanto <code>align-items</code> determina como as linhas como um todo são alinhadas dentro do container. Quando há só uma linha, <code>align-content</code> não tem nenhum efeito.</p>',
-      'es': '<p>Las ranas están repartidas por todo el estanque, pero las hojas de lirio estan agrupadas en la parte superior. Puedes usar <code>align-content</code> para establecer como multiples líneas están separadas una de otra. Esta propiedad acepta los siguientes valores:</p><ul><li><code>flex-start</code>: Las líneas se posicionan en la parte superior del contenedor.</li><li><code>flex-end</code>: Las líneas se posicionan en la parte inferior del contenedor.</li><li><code>center</code>: Las líneas se posicionan en el centro (verticalmente hablando) del contenedor.</li><li><code>space-between</code>: Las líneas se muestran con la misma distancia entre ellas.</li><li><code>space-around</code>: Las líneas se muestran con la misma separación alrededor de ellas.</li><li><code>stretch</code>: Las líneas se estiran para ajustarse al contenedor.</li></ul><p>Esto puede ser confuso, pero <code>align-content</code> determina el espacio entre las líneas, mientras que <code>align-items</code> determina como los elementos en su conjunto están alineados dentro del contenedor. Cuando hay solo una línea, <code>align-content</code> no tiene efecto.</p>',
-      'fr': '<p>Les grenouilles sont éparpillées partout dans l\'étang, mais les nénuphars sont amassés dans le haut. Vous pouvez utiliser <code>align-content</code> pour définir comment plusieurs lignes sont espacées de l\'une à l\'autre. Cette propriété prend les valeurs suivantes&nbsp;:</p><ul><li><code>flex-start</code>&nbsp;: Les lignes sont amassées dans le haut du conteneur.</li><li><code>flex-end</code>: Les lignes sont amassées dans le bas du conteneur.</li><li><code>center</code>&nbsp;: Les lignes sont amassées dans le centre vertical du conteneur.</li><li><code>space-between</code>&nbsp;: Les lignes s\'affichent avec un espace égal entre eux.</li><li><code>space-around</code>&nbsp;: Les lignes s\'affichent avec un espace égal autour d\'eux.</li><li><code>stretch</code>&nbsp;: Les lignes sont étirées pour s\'adapter au conteneur.</li></ul><p>Ceci peut être mélangeant, mais <code>align-content</code> détermine l\'espace entre les lignes, alors que <code>align-items</code> détermine comment les éléments dans leur ensemble sont alignées à l\'intérieur du conteneur. Quand il n\'y a qu\'une seule ligne, <code>align-content</code> n\'a aucun effet.</p>',
-      'ru': '<p>Лягушат раскидало по всему пруду, но лилии сгруппированы в верхней части. Ты можешь использовать <code>align-content</code>, чтоб указать, как несколько рядов, должны отделятся друг от друга. Данное свойство принимает следующие значения:</p><ul><li><code>flex-start</code>: Ряды группируются в верхней части контейнера.</li><li><code>flex-end</code>: Ряды группируются в нижней части контейнера.</li><li><code>center</code>: Ряды группируются вертикально по центру контейнера.</li><li><code>space-between</code>: Ряды отображаются с одинаковыми расстояниями между ними.</li><li><code>space-around</code>: Ряды отображаются с одинаковыми расстояниями вокруг них.</li><li><code>stretch</code>: Ряды расстягиваются, чтоб заполнить контейнер равномерно.</li></ul><p>Это может запутатать, но <code>align-content</code> отвечает за расстоянием между рядами, пока <code>align-items</code> отвечает за то, как элементы в целом будут выровнены в контейнере. Когда только один ряд, <code>align-content</code> ни на что не влияет.</p>',
-      'fa': '<p>قورباغه ها در سراسر برکه پخش شده اند, اما نیلوفر های آبی در بالای برکه هستند. شما با استفاده از <code>align-content</code> آن ها را به صورت ردیفی به بالا هدایت کنید. این خاصیت مقادیر زیر را می پذیرد:</p><ul><li><code>flex-start</code>: با این مقدار <span class="en-font">flex-line</span> ها در ابتدای <span class="en-font">flex-container</span> جمع می‌شوند.</li><li><code>flex-end</code>: با این مقدار <span class="en-font">flex-line</span> ها در انتهای <span class="en-font">flex-container</span> جمع می‌شوند.</li><li><code>center</code>: با این مقدار <span class="en-font">flex-line</span> ها در وسط <span class="en-font">flex-container</span> جمع میشوند.</li><li><code>space-between</code>: با این مقدار فضای خالی به طور مساوی بین <span class="en-font">flex line</span> ها توزیع میشود. خط اول در ابتدا و خط آخر در انتهای <span class="en-font">flex container</span> قرار می‌گیرند و بقیه خطوط در بین این ۲ خطر قرار می‌گیرند.</li><li><code>space-around</code>: فضای خالی به طور مساوی بین <span class="en-font">flex-line</span> ها تقسیم می‌شود.</li><li><code>stretch</code>:  با این مقدار <span class="en-font">flex-line</span> ها کشیده می‌شوند و فضای خالی را پر می کنند (این مقدار پیشفرض است).</li></ul>',
-      'zh-cn': '<p>青蛙们在池塘里到处都是，然而荷叶都在顶部。你可以使用<code>align-content</code>来决定行与行之间隔多远。这个属性接受这些值：</p><ul><li><code>flex-start</code>: 多行都集中在顶部。</li><li><code>flex-end</code>: 多行都集中在底部。</li><li><code>center</code>: 多行居中。</li><li><code>space-between</code>: 行与行之间保持相等距离。</li><li><code>space-around</code>: 每行的周围保持相等距离。</li><li><code>stretch</code>: 每一行都被拉伸以填满容器。</li></ul><p>这可能有些容易混淆，但<code>align-content</code>决定行之间的间隔，而<code>align-items</code>决定元素整体在容器的什么围着。只有一行的时候<code>align-content</code>没有任何效果。</p>',
-      'tr': '<p>Kurbağalar göle dağılmışlar ama nilüfer yaprakları tepede toplanmışlar. <code>align-content</code> kuralı ile satırları birbirinden ayırabilirsiniz. Bu kural şu değerleri alır:</p><ul><li><code>flex-start</code>: Satırlar flex container\'ın tepesinde toplanır.</li><li><code>flex-end</code>: Satırlar flex container\'ın aşağısında toplanır.</li><li><code>center</code>: Satırlar flex container\'ın dikey ortasında toplanır.</li><li><code>space-between</code>: Satırlar aralarında eşit boşluk kalacak şekilde yayılırlar.</li><li><code>space-around</code>: Satırlar etraflarında eşit boşluk kalacak şekilde yayılırlar.</li><li><code>stretch</code>: Satırlar flex container\'ı kaplamak için uzarlar.</li></ul><p>Bu kafa karıştırıcı olabilir, ama <code>align-content</code> satırlar için aralıkları belirlerken, <code>align-items</code> öğlerin flex container içerisinde beraberce nasıl hizalanacağını belirler. Eğer tek satır varsa, <code>align-content</code> kuralının bir etkisi yoktur.</p>',
-      'it': '<p>Le rane sono sparse per tutto il lago mentre le ninfee sono tutte ragruppate in alto. Puoi utilizzare <code>align-content</code> per decidere come le linee verranno distanziate tra di loro. Questa proprieta\' accetta i seguenti valori:</p><ul><li><code>flex-start</code>: Le linee sono raggruppate all\'inizio del contenitore.</li><li><code>flex-end</code>: Le linee sono raggruppate alla fine del contenitore.</li><li><code>center</code>: Le linee vengono centrate verticalmente nel contenitore.</li><li><code>space-between</code>: Le linee occupano tutto lo spazio del contenitore, separate da uguale quantita\' di spazio tra di loro.</li><li><code>space-around</code>: Le linee occupano tutto lo spazio disponibile e vengono separate da uguale quantita\' di spazio attorno a loro.</li><li><code>stretch</code>: Le linee vengono allungate per occupare tutto lo spazio disponibile.</li></ul><p>Questo puo\' confondere ma <code>align-content</code> determina lo spazio tra le linee mentre <code>align-items</code> determina come gli elementi nell\'insieme vengono disposti nel contenitore. Se esiste solo una linea <code>align-content</code> non ha alcun effetto.</p>',
-      'ko': '<p>개구리들이 연못의 사방에 퍼져있고, 수련잎은 연못의 위쪽에 모여있습니다. <code>align-content</code>를 사용하여 여러 줄 사이의 간격을 지정할 수 있습니다. 이 속성은 다음의 값들을 인자로 받습니다:</p><ul><li><code>flex-start</code>: 여러 줄들을 컨테이너의 꼭대기에 정렬합니다.</li><li><code>flex-end</code>: 여러 줄들을 컨테이너의 바닥에 정렬합니다.</li><li><code>center</code>: 여러 줄들을 세로선 상의 가운데에 정렬합니다.</li><li><code>space-between</code>: 여러 줄들 사이에 동일한 간격을 둡니다.</li><li><code>space-around</code>: 여러 줄들 주위에 동일한 간격을 둡니다.</li><li><code>stretch</code>: 여러 줄들을 컨테이너에 맞도록 늘립니다.</li></ul><p>이 속성을 사용하는 방법이 어려울 수 있습니다. <code>align-content</code>는 여러 줄들 사이의 간격을 지정하며, <code>align-items</code>는 컨테이너 안에서 어떻게 모든 요소들이 정렬하는지를 지정합니다. 한 줄만 있는 경우, <code>align-content</code>는 효과를 보이지 않습니다.</p>',
-      'lt': '<p>Varlytės pasiskirsčiusios po visą tvenkinį, bet lelijų lapai plūduriuoja tvenkinio viršuje. Galite nauoti <code>align-content</code>, kad nustatytumėte kokiais tarpais viena nuo kitos bus atskirtos kelios eilutės. Ši komanda reaguoja į šias vertes:</p><ul><li><code>flex-start</code>: Eilutės yra susitelkusios viršuje.</li><li><code>flex-end</code>: Eilutės yra susitelkusios apačioje.</li><li><code>center</code>: Eilutės yra vertikaliai susitelkusios viduryje.</li><li><code>space-between</code>: Eilutės yra paskirstomos taip, kad tarpai tarp jų būtų vienodi.</li><li><code>space-around</code>: Eilutės paskirstomos taip, kad tarpai aplink jas būtų vienodi.</li><li><code>stretch</code>: Eilutės yra ištempiamos, kad užpildytų supantį elementą.</li></ul><p>Tai gali būti painoka, bet <code>align-content</code> nustato tarpus tarp eilučių, o tuo tarpu <code>align-items</code> nustato kaip elementai kaip visuma yra lygiuojami juos supančiame elemente. Kai atvaizduojama tik viena eilutė, <code>align-content</code> neturi jokio poveikio.</p>'
-    },
-    board: 'ggggggggggggggg',
-    classes: {'#pond, #background': 'wrap'},
-    style: {'align-content': 'flex-start'},
-    before: "#pond {\n  display: flex;\n  flex-wrap: wrap;\n",
-    after: "}"
-  },
-  {
-    name: 'align-content 2',
-    instructions: {
-      'en': '<p>Now the current has bunched the lilypads at the bottom. Use <code>align-content</code> to guide the frogs there.</p>',
-      'de': '<p>Der Strom hat die Seerosenbl&auml;tter nach unten getrieben. Benutze <code>align-content</code>, um die Fr&ouml;sche dorthin zu f&uuml;hren.</p>',
-      'pt-br': '<p>Agora a correnteza agrupou as vitórias-régias no fundo. Use <code>align-content</code> para guiar os sapos até lá.</p>',
-      'es': '<p>Ahora, la corriente ha agrupado las hojas de lirio en la parte inferior. Usa <code>align-content</code> para guiar las ranas hasta allí.</p>',
-      'fr': '<p>Maintenant, le courant a amassé tous les nénuphars dans le bas de l\'étang. Utilisez <code>align-content</code> pour guider les grenouilles vers le bas.</p>',
-      'ru': '<p>Теперь течение сгруппировало лилии в нижней части. Используй <code>align-content</code>, чтоб направить лягушат туда.</p>',
-      'fa': '<p>در حال حاضر نیلوفر های آبی به پایین برکه حرکت کرده اند. با استفاده از <code>align-content</code> قورباغه ها را هدایت کنید.</p>',
-      'zh-cn': '<p>现在水流把荷叶都推到底部了。用<code>align-content</code>来指引青蛙到那里。</p>',
-      'tr': '<p>Bu gölde nilüfer yaprakları aşağıda toplanmışlar. <code>align-content</code>kuralını kullanarak kurbağaları oraya yönlendirin.</p>',
-      'it': '<p>Ora la corrente ha trasportato le ninfee alla fine dello stagno. Guida li\' le rane utilizzando <code>align-content</code>.</p>',
-      'ko': '<p>이제 연못의 조류에 의해 수련잎들이 연못의 아래쪽으로 떠내려 갔습니다. <code>align-content</code>를 사용하여 개구리들이 수련잎 위로 이동할 수 있도록 도와주세요.</p>',
-      'lt': '<p>Dabar srovė nunešė lelijos lapus į tvenkinio apačią. Naudodami <code>align-content</code> padėkite varlytėms pasiekti lelijas.</p>'
-    },
-    board: 'ggggggggggggggg',
-    classes: {'#pond, #background': 'wrap'},
-    style: {'align-content': 'flex-end'},
-    before: "#pond {\n  display: flex;\n  flex-wrap: wrap;\n",
+    before: "pond: {",
     after: "}"
   }
 ];

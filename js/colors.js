@@ -1,5 +1,5 @@
 let colors = {
-  green: '#43A047',
+  green: '#48ac4c',
   blue: '#1F5768',
   red: '#F12D22',
   darkGrey: '#999',

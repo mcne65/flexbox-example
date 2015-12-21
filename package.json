@@ -6,6 +6,7 @@
   "author": null,
   "dependencies": {
     "react-native": "exponentjs/react-native#2015-11-13",
-    "react-native-dropdown": "0.0.6"
+    "react-native-dropdown": "0.0.6",
+    "react-native-htmlview": "^0.2.0"
   }
 }
