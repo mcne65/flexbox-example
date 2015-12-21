@@ -44,7 +44,8 @@ export default class LevelDisplay extends Component {
     
     let {
       board,
-      style
+      style,
+      defaultStyle
     } = level;
 
     return (
@@ -52,7 +53,7 @@ export default class LevelDisplay extends Component {
         <FlexContainer style={[styles.absolute, style]}>
           {getImages(getImageLinks(board, 'Lilly'))}
         </FlexContainer>
-        <FlexContainer style={[styles.absolute, attempt]}>
+        <FlexContainer style={[styles.absolute, {...defaultStyle, ...attempt}]}>
           {getImages(getImageLinks(board, 'Frog'))}
         </FlexContainer>
       </FlexContainer>

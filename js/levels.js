@@ -164,6 +164,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flexDirection': 'column'},
+    defaultStyle: {'flexDirection': 'row'},
     before: "pond: {",
     after: "}"
   },
@@ -185,6 +186,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flexDirection': 'column', 'justifyContent': 'flex-end'},
+    defaultStyle: {'flexDirection': 'row'},
     before: "pond: {",
     after: "}"
   },

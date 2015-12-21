@@ -34,7 +34,6 @@ export default class LevelPlay extends Component {
               keys.map((key) => {
                 return (
                   <TextInput
-                    key={key}
                     value={values[key] || ''}
                     onChangeText={(value) => onChangeText(key, value)}
                     style={styles.input}

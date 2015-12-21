@@ -35,9 +35,10 @@ let isLevelWon = (style, attempt) => {
 let parseAttempt = (style) => {
   let parsedStyle = (style || '').split(':');
   let retStyle = {};
+  let value = (parsedStyle[1] || '').replace(/[\'\"\s]/g, '');
 
-  if (validProperties.indexOf(parsedStyle[0]) !== -1) {
-    retStyle[parsedStyle[0]] = (parsedStyle[1] || '').replace(/[\'\"\s]/g, '')
+  if (validProperties.indexOf(parsedStyle[0]) !== -1 && value) {
+    retStyle[parsedStyle[0]] = value;
   }
 
   return retStyle;
@@ -134,7 +135,7 @@ export default class Play extends Component {
 
 
 Play.defaultProps = {
-  level: 5
+  level: 7
 }
 
 let styles = StyleSheet.create({
