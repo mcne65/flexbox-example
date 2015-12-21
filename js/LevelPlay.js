@@ -16,7 +16,8 @@ export default class LevelPlay extends Component {
       onChangeText,
       before,
       after,
-      value
+      values,
+      keys
     } = this.props;
 
     return (
@@ -29,13 +30,22 @@ export default class LevelPlay extends Component {
               value={"<p>" + before + "</p>"}
               stylesheet={styles}
             />
-            <TextInput
-              value={value}
-              onChangeText={onChangeText}
-              style={styles.input}
-              autoCapitalize="none"
-              autoCorrect={false}
-            />
+            {
+              keys.map((key) => {
+                return (
+                  <TextInput
+                    key={key}
+                    value={values[key] || ''}
+                    onChangeText={(value) => onChangeText(key, value)}
+                    style={styles.input}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                  />
+                )
+              })
+
+            }
+
             <HTMLView
               value={"<p>" + after + "</p>"}
               stylesheet={styles}

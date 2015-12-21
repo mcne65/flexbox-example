@@ -7,38 +7,77 @@ import React, {
 
 import FlexContainer from "./Container";
 import colors from "./colors";
+import shallowEqual from "./shallowEqual";
 
 import LevelDisplay from "./LevelDisplay";
 import LevelInstruction from "./LevelInstruction";
 import LevelPlay from "./LevelPlay";
 
 import levels from "./levels";
-import messages from "./messages"
+import getMessage from "./messages";
 import docs from "./docs";
+
+
+import NextLevel from "./NextLevel";
+
+let validProperties = [
+  'flexDirection',
+  'justifyContent',
+  'alignSelf',
+  'alignItems',
+  'flexWrap'
+]
+
+let isLevelWon = (style, attempt) => {
+  return shallowEqual(style, attempt);
+}
+
+let parseAttempt = (style) => {
+  let parsedStyle = (style || '').split(':');
+  let retStyle = {};
+
+  if (validProperties.indexOf(parsedStyle[0]) !== -1) {
+    retStyle[parsedStyle[0]] = (parsedStyle[1] || '').replace(/[\'\"\s]/g, '')
+  }
+
+  return retStyle;
+}
+
+let parseValues = (values) => {
+  return Object.keys(values).map((key) => values[key]).map(parseAttempt).reduce((i, n) => {
+    return {
+      ...i,
+      ...n
+    }
+  }, {})
+
+}
 
 export default class Play extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      level: 0,
-      attempt: ''
+      attempt: '',
+      values: {}
     }
   }
 
   render() {
     let {
-      level,
       langguage,
-      attempt
+      attempt,
+      values
     } = this.state;
 
     let {
-      language
+      language,
+      level,
+      onGoToLevel
     } = this.props;
 
 
     let playLevel = levels[level];
-
+    let parsedAttempt = parseValues(values);
     let instruction = levels[level].instructions[language]
 
     return (
@@ -46,7 +85,7 @@ export default class Play extends Component {
         <FlexContainer style={styles.pond}>
           <LevelDisplay 
             level={playLevel}
-            attempt={attempt}
+            attempt={parsedAttempt}
           />
         </FlexContainer>
         <FlexContainer>
@@ -60,11 +99,32 @@ export default class Play extends Component {
           </FlexContainer>
           <FlexContainer>
             <LevelPlay
-              onChangeText={(attempt) => this.setState({attempt})}
-              value={attempt}
+              onChangeText={(key, value) => {
+                let updateValues = {
+                  ...this.state.values
+                };
+                updateValues[key] = value;
+                this.setState({
+                  values: updateValues
+                });
+
+              }.bind(this)}
+              values={values}
               before={playLevel.before}
               after={playLevel.after}
+              keys={Object.keys(playLevel.style)}
             />
+            <View style={styles.nextButton}>
+              <NextLevel
+                win={isLevelWon(playLevel.style, parsedAttempt)}
+                onPress={() => {
+                  if (!isLevelWon(playLevel.style, parsedAttempt)) return;
+                  onGoToLevel(level + 1);
+                }}
+              >
+                {getMessage('next', language)}
+              </NextLevel>
+            </View>
           </FlexContainer>
         </FlexContainer>
       </FlexContainer>
@@ -73,8 +133,17 @@ export default class Play extends Component {
 }
 
 
+Play.defaultProps = {
+  level: 5
+}
+
 let styles = StyleSheet.create({
   pond: {
     backgroundColor: colors.blue
+  },
+  nextButton: {
+    alignItems: 'center', 
+    justifyContent: 'center',
+    paddingVertical: 10
   }
 });

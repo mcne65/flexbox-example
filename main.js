@@ -18,12 +18,14 @@ let routes = {
   play: {component: Play}
 }
 
-function renderScene(Comp, language, onLanguageChange, onGoToGame) {
+function renderScene(Comp, language, level, onLanguageChange, onGoToGame, onGoToLevel) {
   return (
       <Comp 
         language={language} 
+        level={level}
         onLanguageChange={onLanguageChange}
         onGoToGame={onGoToGame}
+        onGoToLevel={onGoToLevel}
       />
   );
 }
@@ -42,6 +44,12 @@ class FlexboxFroggy extends Component {
 
     let onLanguageChange = (language) => this.setState({language});
     let onGoToGame = () => this.refs.navigator.push(routes.play)
+    let onGoToLevel = (level) => this.refs.navigator.push(
+    {
+      ...routes.play,
+      level
+    }
+    )
 
     return (
       <View style={styles.container}>
@@ -49,7 +57,7 @@ class FlexboxFroggy extends Component {
           ref="navigator"
           style={styles.spacer}
           initialRoute={routes.home}
-          renderScene={route => renderScene(route.component, this.state.language, onLanguageChange, onGoToGame)}
+          renderScene={route => renderScene(route.component, this.state.language, route.level, onLanguageChange, onGoToGame, onGoToLevel)}
         />
       </View>
     );
