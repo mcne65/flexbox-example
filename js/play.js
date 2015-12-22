@@ -2,7 +2,8 @@ import React, {
   View,
   ScrollView,
   StyleSheet,
-  Component
+  Component,
+  LayoutAnimation
 } from "react-native"
 
 import FlexContainer from "./Container";
@@ -106,6 +107,7 @@ export default class Play extends Component {
                   ...this.state.values
                 };
                 updateValues[key] = value;
+                LayoutAnimation.spring();
                 this.setState({
                   values: updateValues
                 });
