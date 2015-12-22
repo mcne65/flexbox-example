@@ -137,7 +137,7 @@ export default class Play extends Component {
 
 
 Play.defaultProps = {
-  level: 10
+  level: 0
 }
 
 let styles = StyleSheet.create({
