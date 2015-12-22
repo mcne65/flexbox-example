@@ -3,13 +3,17 @@ import React, {
   Image,
   ScrollView,
   StyleSheet,
-  Component
+  Component,
+  Dimensions
 } from "react-native"
 
 import FlexContainer from "./Container";
 import images from "./images";
 
-
+let {
+  width,
+  height
+} = Dimensions.get('window');
 
 let colorMap = {
   'g': 'green',
@@ -17,7 +21,8 @@ let colorMap = {
   'y': 'yellow'
 };
 
-
+let getMeasurement = (value, amount) => Math.min(Math.floor((value/2)/amount), 1
+  
 let getImageLinks = (board, append) => {
   return board.split('').map((piece) => {
     return images[(colorMap[piece] + append)]
@@ -27,12 +32,13 @@ let getImageLinks = (board, append) => {
 let getImages = (images, ) => {
   return images.map(image => 
       <Image 
-        key={image} 
         source={{uri: image}} 
-        style={{width: 100, height: 100}} 
+        style={{width: getMeasurement(width, images.length), height: getMeasurement(height, images.length)}} 
+        resizeMode="contain"
       /> 
   )
 }
+00)
 
 export default class LevelDisplay extends Component {
 
