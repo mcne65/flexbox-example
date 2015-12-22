@@ -5,7 +5,7 @@ Flexbox Froggy is a game for learning CSS flexbox. Check it out at [flexboxfrogg
 
 Read [this blog post](http://thomaspark.co/2015/11/learning-css-layout-with-flexbox-froggy/) for background on the project.
 
-![FontCDN screenshot](./images/screenshot.png)
+![FontCDN screenshot](http://i.imgur.com/BuCjWBl.gif)
 
 ## Author
 
@@ -33,3 +33,6 @@ My gratitude to these contributors for localizing Flexbox Froggy. This is what o
 
 Don't see your language on the list? Contribute a translation! Fork the [repo](https://github.com/thomaspark/flexboxfroggy/), add your translations, and submit a pull request.
 
+## React Native
+
+React Native version ported by browniefed
