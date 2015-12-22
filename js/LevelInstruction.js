@@ -20,6 +20,7 @@ export default class LevelInstruction extends Component {
         <HTMLView
           value={instruction}
           stylesheet={styles}
+          onLinkPress={() => {}}
         />
       </FlexContainer>
     )

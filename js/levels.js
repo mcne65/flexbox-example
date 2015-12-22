@@ -251,34 +251,31 @@ var levels = [
     },
     board: 'gggggrrrrryyyyy',
     style: {'flexDirection': 'column', 'flexWrap': 'wrap'},
+    defaultStyle: {'flexDirection': 'row', 'flexWrap': 'nowrap'},
+    before: "pond: {",
+    after: "}"
+  },
+  {
+    name: 'win',
+    instructions: {
+      'en': '<p>You win! Thanks to your mastery of flexbox, you were able to help all of the frogs to their lilypads. Just look how hoppy they are!</p><p>If you found this ribbeting, check out my other projects on my <a href="http://thomaspark.co">blog</a> or <a href="http://twitter.com/thomashpark">Twitter</a>, and be sure to share Flexbox Froggy with your friends!</p>',
+      'de': '<p>Gewonnen! Dank deines flexbox-K&ouml;nnens warst du in der Lage, alle Fr&ouml;sche zu ihrem Seerosenblatt zu f&uuml;hren. Sieh dir an wie gl&uuml;cklich sie sind!</p><p>Wenn dir das gefallen hat, schau dir meine anderen Projekte auf meinem <a href="http://thomaspark.co">Blog</a> oder <a href="http://twitter.com/thomashpark">Twitter</a> an, und teile Flexbox Froggy mit deinen Freunden!</p>',
+      'pt-br': '<p>Você venceu! Graças à sua maestria de flexbox, você foi capaz de ajudar todos os sapos a chegar até suas vitórias-régias. Veja como eles estão felizes!</p><p>Se você achou isso coaxante, confira meus outros projetos no meu <a href="http://thomaspark.co">blog</a> ou <a href="http://twitter.com/thomashpark">Twitter</a>, e compartilhe Flexbox Froggy com seus amigos!</p>',
+      'es': '<p>¡Tú ganas! gracias a su dominio de flexbox, fuiste capaz de ayudar a todas las ranas a ir a sus hojas de lirio. ¡Basta mirar lo felices que son!</p><p>Si tu encontras esto divertido, revisa mis otros projectos en mi <a href="http://thomaspark.co">blog</a> o <a href="http://twitter.com/thomashpark">Twitter</a> y asegurese de compartir Flexbox Froggy con tus amigos.</p>',
+      'fr': '<p>Vous avez gagné! Grâce à votre maîtrise des flexbox, vous avez été capable d\'aider toutes les grenouilles à trouver leurs nénuphars. Regardez comment elles sautent de joie!</p><p>Si vous avez trouver cela amusant, regardez mes autres projets sur mon <a href="http://thomaspark.co">blog</a> ou mon <a href="http://twitter.com/thomashpark">Twitter</a>, et assurez-vous de partager Flexbox Froggy avec vos amis!</p>',
+      'ru': '<p>Ты выиграл! Благодарим тебя за мастерство flexbox, ты смог помочь всем лягушатам добраться до их лилий. Просто взгляни, как они счастливы!</p><p>Если тебе понравилось, зацени мои другие проекты в моем <a href="http://thomaspark.co">блоге</a> или <a href="http://twitter.com/thomashpark">твитере</a>, и не забудь поделится этой игрой со своими друзьями!</p>',
+      'fa': '<p>شما برنده شدید! به همه قورباغه ها کمک کردید تا به نیلوفر های آبی خود برسند. آن ها خیلی خوشحال هستن و از شما تشکر می کنن!</p><p>برای مشاهده پروژه های دیگر از طریق <a href="http://thomaspark.co">وبلاگ</a> یا <a href="http://twitter.com/thomashpark">تویتتر</a> مرا دنبال کنید, و حتما بازی آموزش فلکس باکس توسط قورباغه را با دوستان خود به اشتراک بگذارید !</p>',
+      'zh-cn': '<p>你赢了!正因为你对flexbox的了解，你帮助所有的青蛙回到了他们的荷叶上！看看他们跳的多开心！</p><p>如果你觉得这个网站很有趣，也来看看我<a href="http://thomaspark.co">博客</a>或<a href="http://twitter.com/thomashpark">Twitter</a>上的其他项目，而且记得和朋友分享Flexbox Froggy哦!</p>',
+      'tr': '<p>Kazandınız! Flexbox ustalığınız sayesinde bütün kurbağaları nilüfer yapraklarına götürebildik. Bakın, nekadar da mutlular!</p><p>Eğer bunu beğendiyseniz, diğer projelerime <a href="http://thomaspark.co">blog</a> ya da <a href="http://twitter.com/thomashpark">Twitter</a> adreslerinden göz gezdirin, ve Flexbox Froggy oyununu arkadaşlarınızla paylaşın!</p>',
+      'it': '<p>Hai vinto! Grazie alla tua conoscenza di flexbox sei riuscito ad aiutare tutte le rane a trovare la loro ninfea. Guarda come sono felici ora!</p><p>Se hai trovato questo gioco interessante, visita il mio <a href="http://thomaspark.co">blog</a> o il profilo  <a href="http://twitter.com/thomashpark">Twitter</a> per aggiornamenti sugli altri miei progetti. Non dimenticare di condividere Flexbox Froggy con i tuoi amici!</p>',
+      'ko': '<p>해냈습니다! 당신의 능숙한 Flexbox 솜씨 덕분에 모든 개구리들이 수련잎 위로 돌아가는 것을 도울 수 있었습니다. Froggy와 친구들이 기뻐하고 있군요!</p><p>이 게임이 마음에 드셨다면 이곳에서 제 다른 프로젝트들을 확인해보세요: <a href="http://thomaspark.co">blog</a> or <a href="http://twitter.com/thomashpark">Twitter</a> 친구들과 함께 Flexbox Froggy를 즐기는 것도 잊지 마시고요!</p>',
+      'lt': '<p>Jūs laimėjote! Jūsų įvaldyto "flexbox" metodo dėka, sėkmingai pagelbėjote visoms varlytems pasiekti savo lelijos lapus. Tik pažiūrėkite kaip jos šokinėja iš džiaugsmo!</p><p>Jei manote, kad šios pamokos Jums buvo naudingos, užmeskite akį į kitus mano projektus mano <a href="http://thomaspark.co">dienoraštyje</a> ar <a href="http://twitter.com/thomashpark">Twitter</a> paskyroje ir būtinai pasidalinkite "Flexbox Froggy" su draugais!</p>'
+    },
+    board: 'gyrgyrgyrgyrgyrgyrgyrgyrg',
+    style: {},
     before: "pond: {",
     after: "}"
   }
 ];
 
-var levelWin = {
-  name: 'win',
-  instructions: {
-    'en': '<p>You win! Thanks to your mastery of flexbox, you were able to help all of the frogs to their lilypads. Just look how hoppy they are!</p><p>If you found this ribbeting, check out my other projects on my <a href="http://thomaspark.co">blog</a> or <a href="http://twitter.com/thomashpark">Twitter</a>, and be sure to share Flexbox Froggy with your friends!</p>',
-    'de': '<p>Gewonnen! Dank deines flexbox-K&ouml;nnens warst du in der Lage, alle Fr&ouml;sche zu ihrem Seerosenblatt zu f&uuml;hren. Sieh dir an wie gl&uuml;cklich sie sind!</p><p>Wenn dir das gefallen hat, schau dir meine anderen Projekte auf meinem <a href="http://thomaspark.co">Blog</a> oder <a href="http://twitter.com/thomashpark">Twitter</a> an, und teile Flexbox Froggy mit deinen Freunden!</p>',
-    'pt-br': '<p>Você venceu! Graças à sua maestria de flexbox, você foi capaz de ajudar todos os sapos a chegar até suas vitórias-régias. Veja como eles estão felizes!</p><p>Se você achou isso coaxante, confira meus outros projetos no meu <a href="http://thomaspark.co">blog</a> ou <a href="http://twitter.com/thomashpark">Twitter</a>, e compartilhe Flexbox Froggy com seus amigos!</p>',
-    'es': '<p>¡Tú ganas! gracias a su dominio de flexbox, fuiste capaz de ayudar a todas las ranas a ir a sus hojas de lirio. ¡Basta mirar lo felices que son!</p><p>Si tu encontras esto divertido, revisa mis otros projectos en mi <a href="http://thomaspark.co">blog</a> o <a href="http://twitter.com/thomashpark">Twitter</a> y asegurese de compartir Flexbox Froggy con tus amigos.</p>',
-    'fr': '<p>Vous avez gagné! Grâce à votre maîtrise des flexbox, vous avez été capable d\'aider toutes les grenouilles à trouver leurs nénuphars. Regardez comment elles sautent de joie!</p><p>Si vous avez trouver cela amusant, regardez mes autres projets sur mon <a href="http://thomaspark.co">blog</a> ou mon <a href="http://twitter.com/thomashpark">Twitter</a>, et assurez-vous de partager Flexbox Froggy avec vos amis!</p>',
-    'ru': '<p>Ты выиграл! Благодарим тебя за мастерство flexbox, ты смог помочь всем лягушатам добраться до их лилий. Просто взгляни, как они счастливы!</p><p>Если тебе понравилось, зацени мои другие проекты в моем <a href="http://thomaspark.co">блоге</a> или <a href="http://twitter.com/thomashpark">твитере</a>, и не забудь поделится этой игрой со своими друзьями!</p>',
-    'fa': '<p>شما برنده شدید! به همه قورباغه ها کمک کردید تا به نیلوفر های آبی خود برسند. آن ها خیلی خوشحال هستن و از شما تشکر می کنن!</p><p>برای مشاهده پروژه های دیگر از طریق <a href="http://thomaspark.co">وبلاگ</a> یا <a href="http://twitter.com/thomashpark">تویتتر</a> مرا دنبال کنید, و حتما بازی آموزش فلکس باکس توسط قورباغه را با دوستان خود به اشتراک بگذارید !</p>',
-    'zh-cn': '<p>你赢了!正因为你对flexbox的了解，你帮助所有的青蛙回到了他们的荷叶上！看看他们跳的多开心！</p><p>如果你觉得这个网站很有趣，也来看看我<a href="http://thomaspark.co">博客</a>或<a href="http://twitter.com/thomashpark">Twitter</a>上的其他项目，而且记得和朋友分享Flexbox Froggy哦!</p>',
-    'tr': '<p>Kazandınız! Flexbox ustalığınız sayesinde bütün kurbağaları nilüfer yapraklarına götürebildik. Bakın, nekadar da mutlular!</p><p>Eğer bunu beğendiyseniz, diğer projelerime <a href="http://thomaspark.co">blog</a> ya da <a href="http://twitter.com/thomashpark">Twitter</a> adreslerinden göz gezdirin, ve Flexbox Froggy oyununu arkadaşlarınızla paylaşın!</p>',
-    'it': '<p>Hai vinto! Grazie alla tua conoscenza di flexbox sei riuscito ad aiutare tutte le rane a trovare la loro ninfea. Guarda come sono felici ora!</p><p>Se hai trovato questo gioco interessante, visita il mio <a href="http://thomaspark.co">blog</a> o il profilo  <a href="http://twitter.com/thomashpark">Twitter</a> per aggiornamenti sugli altri miei progetti. Non dimenticare di condividere Flexbox Froggy con i tuoi amici!</p>',
-    'ko': '<p>해냈습니다! 당신의 능숙한 Flexbox 솜씨 덕분에 모든 개구리들이 수련잎 위로 돌아가는 것을 도울 수 있었습니다. Froggy와 친구들이 기뻐하고 있군요!</p><p>이 게임이 마음에 드셨다면 이곳에서 제 다른 프로젝트들을 확인해보세요: <a href="http://thomaspark.co">blog</a> or <a href="http://twitter.com/thomashpark">Twitter</a> 친구들과 함께 Flexbox Froggy를 즐기는 것도 잊지 마시고요!</p>',
-    'lt': '<p>Jūs laimėjote! Jūsų įvaldyto "flexbox" metodo dėka, sėkmingai pagelbėjote visoms varlytems pasiekti savo lelijos lapus. Tik pažiūrėkite kaip jos šokinėja iš džiaugsmo!</p><p>Jei manote, kad šios pamokos Jums buvo naudingos, užmeskite akį į kitus mano projektus mano <a href="http://thomaspark.co">dienoraštyje</a> ar <a href="http://twitter.com/thomashpark">Twitter</a> paskyroje ir būtinai pasidalinkite "Flexbox Froggy" su draugais!</p>'
-  },
-  board: 'gyrgyrgyrgyrgyrgyrgyrgyrg',
-  classes: {'#pond, #background': 'wrap'},
-  style: {},
-  before: "#pond {\n  display: flex;\n",
-  after: "}"
-};
-
-
 export default levels;
-export {levelWin as levelWin}

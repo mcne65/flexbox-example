@@ -73,7 +73,8 @@ export default class Play extends Component {
     let {
       language,
       level,
-      onGoToLevel
+      onGoToLevel,
+      onGoToHome
     } = this.props;
 
 
@@ -120,6 +121,7 @@ export default class Play extends Component {
                 win={isLevelWon(playLevel.style, parsedAttempt)}
                 onPress={() => {
                   if (!isLevelWon(playLevel.style, parsedAttempt)) return;
+                  if (playLevel.name === 'win') return onGoToHome()
                   onGoToLevel(level + 1);
                 }}
               >
