@@ -137,7 +137,7 @@ export default class Play extends Component {
 
 
 Play.defaultProps = {
-  level: 0
+  level: 10
 }
 
 let styles = StyleSheet.create({
@@ -145,8 +145,9 @@ let styles = StyleSheet.create({
     backgroundColor: colors.blue
   },
   nextButton: {
-    alignItems: 'center', 
-    justifyContent: 'center',
-    paddingVertical: 10
+    paddingVertical: 5,
+    position: 'absolute',
+    right: 10,
+    bottom: 10
   }
 });

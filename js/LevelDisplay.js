@@ -21,7 +21,7 @@ let colorMap = {
   'y': 'yellow'
 };
 
-let getMeasurement = (value, amount) => Math.min(Math.floor((value/2)/amount), 100)
+let getMeasurement = (value, amount) => Math.min(Math.floor((value/3)/amount), 75)
 
 let getImageLinks = (board, append) => {
   return board.split('').map((piece) => {

@@ -13,6 +13,8 @@ import docs from "./js/docs"
 import messages from "./js/messages"
 import colors from "./js/colors"
 
+var KeyboardSpacer = require('react-native-keyboard-spacer');
+
 let routes = {
   home: {component: Home},
   play: {component: Play}
@@ -64,6 +66,8 @@ class FlexboxFroggy extends Component {
           initialRoute={routes.home}
           renderScene={route => renderScene(route.component, this.state.language, route.level, onLanguageChange, onGoToGame, onGoToLevel, onGoToHome)}
         />
+        <KeyboardSpacer />
+
       </View>
     );
   }

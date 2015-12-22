@@ -30,7 +30,9 @@ let styles = StyleSheet.create({
   start: {
     backgroundColor: colors.red,
     paddingVertical: 5,
-    paddingHorizontal: 80
+    width: 50,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   disable: {
     opacity: .5

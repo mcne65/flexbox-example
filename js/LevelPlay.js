@@ -68,9 +68,10 @@ let styles = StyleSheet.create({
     backgroundColor: colors.lightGrey
   },
   input: {
-    height: 25,
+    height: 20,
     backgroundColor: '#FFF',
-    marginHorizontal: 8
+    marginLeft: 8,
+    marginRight: 58
   },
   p: {
     color: '#aaa',
