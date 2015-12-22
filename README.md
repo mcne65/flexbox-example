@@ -37,4 +37,4 @@ Don't see your language on the list? Contribute a translation! Fork the [repo](h
 
 React Native version ported by browniefed
 
-Test it out on Exponent at [exp://exp.host/@browniefed/flexboxfroggy](exp://exp.host/@browniefed/flexboxfroggy)
+Test it out on Exponent at [http://exp.host/@browniefed/flexboxfroggy](http://exp.host/@browniefed/flexboxfroggy)
