@@ -22,8 +22,8 @@ let routes = {
 
 function renderScene(Comp, language, level, onLanguageChange, onGoToGame, onGoToLevel, onGoToHome) {
   return (
-      <Comp 
-        language={language} 
+      <Comp
+        language={language}
         level={level}
         onLanguageChange={onLanguageChange}
         onGoToHome={onGoToHome}
@@ -60,7 +60,7 @@ class FlexboxFroggy extends Component {
 
     return (
       <View style={styles.container}>
-        <Navigator 
+        <Navigator
           ref="navigator"
           style={styles.spacer}
           initialRoute={routes.home}
@@ -83,4 +83,5 @@ let styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('main', () => FlexboxFroggy);
+// AppRegistry.registerComponent('main', () => FlexboxFroggy);
+Exponent.registerRootComponent(FlexboxFroggy);
