@@ -1,15 +1,12 @@
-import React, {
-  View,
-  StyleSheet,
-  Component
-} from "react-native"
+import React from 'react';
+import { View, StyleSheet } from "react-native";
 
 import FlexContainer from "./Container";
 import colors from "./colors";
 
-var HTMLView = require('react-native-htmlview')
+import HTMLView from 'react-native-htmlview';
 
-export default class LevelInstruction extends Component {
+class LevelInstruction extends React.Component {
   render() {
     let {
       instruction
@@ -42,4 +39,6 @@ let styles = StyleSheet.create({
   instruction: {
     padding: 5
   }
-})
+});
+
+export default LevelInstruction;

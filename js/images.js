@@ -7,4 +7,4 @@ let images = {
   yellowLilly: 'http://i.imgur.com/7sC9O25.png'
 }
 
-export default images
+export default images;

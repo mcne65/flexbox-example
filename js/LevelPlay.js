@@ -1,16 +1,12 @@
-import React, {
-  View,
-  StyleSheet,
-  Component,
-  TextInput
-} from "react-native"
+import React from 'react';
+import { View, StyleSheet, TextInput } from "react-native";
 
 import FlexContainer from "./Container";
 import colors from "./colors";
 
-var HTMLView = require('react-native-htmlview')
+import HTMLView from 'react-native-htmlview';
 
-export default class LevelPlay extends Component {
+class LevelPlay extends React.Component {
   render() {
     let {
       onChangeText,
@@ -26,29 +22,29 @@ export default class LevelPlay extends Component {
 
         </View>
         <FlexContainer style={styles.editorContainer}>
-            <HTMLView
-              value={"<p>" + before + "</p>"}
-              stylesheet={styles}
-            />
-            {
-              keys.map((key) => {
-                return (
-                  <TextInput
-                    value={values[key] || ''}
-                    onChangeText={(value) => onChangeText(key, value)}
-                    style={styles.input}
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                  />
-                )
-              })
+          <HTMLView
+            value={"<p>" + before + "</p>"}
+            stylesheet={styles}
+          />
+          {
+            keys.map((key) => {
+              return (
+                <TextInput
+                  key={'fake-key'}
+                  value={values[key] || ''}
+                  onChangeText={(value) => onChangeText(key, value)}
+                  style={styles.input}
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                />
+              )
+            })
+          }
 
-            }
-
-            <HTMLView
-              value={"<p>" + after + "</p>"}
-              stylesheet={styles}
-            />
+          <HTMLView
+            value={"<p>" + after + "</p>"}
+            stylesheet={styles}
+          />
         </FlexContainer>
       </FlexContainer>
     )
@@ -78,3 +74,5 @@ let styles = StyleSheet.create({
     fontSize: 20
   }
 })
+
+export default LevelPlay;

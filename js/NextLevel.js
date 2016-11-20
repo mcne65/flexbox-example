@@ -1,15 +1,10 @@
-import React, {
-  View,
-  Text,
-  StyleSheet,
-  Component,
-  TouchableOpacity
-} from "react-native"
+import React from 'react';
+import { View, Text, StyleSheet,
+         TouchableOpacity } from "react-native";
 
 import colors from "./colors";
 
-
-export default class NextLevel extends Component {
+class NextLevel extends React.Component {
   render() {
     let {
       win,
@@ -41,3 +36,5 @@ let styles = StyleSheet.create({
     color: '#FFF'
   }
 })
+
+export default NextLevel;

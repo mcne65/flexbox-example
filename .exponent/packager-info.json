@@ -1,8 +1,8 @@
 {
   "exponentServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 3467,
+  "packagerPid": 7098,
   "exponentServerNgrokUrl": "https://fb-8q9.test123.flexboxfroggy.exp.direct",
   "packagerNgrokUrl": "https://packager.fb-8q9.test123.flexboxfroggy.exp.direct",
-  "ngrokPid": 3487
+  "ngrokPid": 7137
 }

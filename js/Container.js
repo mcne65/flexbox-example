@@ -1,9 +1,7 @@
-import React, {
-  View,
-  StyleSheet
-} from "react-native";
+import React from 'react';
+import { View, StyleSheet } from "react-native";
 
-export default class FlexContainer extends React.Component {
+class FlexContainer extends React.Component {
   render() {
     return (
       <View {...this.props} style={[styles.container, this.props.style]}>
@@ -17,4 +15,6 @@ let styles = StyleSheet.create({
   container: {
     flex: 1
   }
-})
+});
+
+export default FlexContainer;

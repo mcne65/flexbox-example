@@ -1,10 +1,6 @@
-import React, {
-  View,
-  ScrollView,
-  StyleSheet,
-  Component,
-  LayoutAnimation
-} from "react-native"
+import React from 'react';
+import { View, ScrollView, StyleSheet,
+         LayoutAnimation } from "react-native";
 
 import FlexContainer from "./Container";
 import colors from "./colors";
@@ -17,7 +13,6 @@ import LevelPlay from "./LevelPlay";
 import levels from "./levels";
 import getMessage from "./messages";
 import docs from "./docs";
-
 
 import NextLevel from "./NextLevel";
 
@@ -55,13 +50,25 @@ let parseValues = (values) => {
 
 }
 
-export default class Play extends Component {
+class Play extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       attempt: '',
       values: {}
     }
+
+    this.changeText = this.changeText.bind(this);
+  }
+
+  changeText(key, value) {
+    let updateValues = { ...this.state.values };
+
+    updateValues[key] = value;
+    LayoutAnimation.spring();
+    this.setState({
+      values: updateValues
+    });
   }
 
   render() {
@@ -86,7 +93,7 @@ export default class Play extends Component {
     return (
       <FlexContainer>
         <FlexContainer style={styles.pond}>
-          <LevelDisplay 
+          <LevelDisplay
             level={playLevel}
             attempt={parsedAttempt}
           />
@@ -95,24 +102,14 @@ export default class Play extends Component {
 
           <FlexContainer>
             <ScrollView>
-              <LevelInstruction 
+              <LevelInstruction
                 instruction={instruction}
               />
             </ScrollView>
           </FlexContainer>
           <FlexContainer>
             <LevelPlay
-              onChangeText={(key, value) => {
-                let updateValues = {
-                  ...this.state.values
-                };
-                updateValues[key] = value;
-                LayoutAnimation.spring();
-                this.setState({
-                  values: updateValues
-                });
-
-              }.bind(this)}
+              onChangeText={this.changeText}
               values={values}
               before={playLevel.before}
               after={playLevel.after}
@@ -153,3 +150,5 @@ let styles = StyleSheet.create({
     bottom: 10
   }
 });
+
+export default Play;

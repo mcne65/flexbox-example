@@ -1,12 +1,9 @@
-import React, {
-  View,
-  Component,
-  StyleSheet
-} from "react-native"
+import React from 'react';
+import { View, StyleSheet } from "react-native";
 
 const languages = ['en', 'de', 'pt-br', 'es', 'fr', 'ru', 'fa', 'zh-cn', 'tr', 'it', 'ko', 'lt'];
 
-const DropDown = require('react-native-dropdown');
+import DropDown from 'react-native-dropdown';
 const {
   Select,
   Option,
@@ -14,15 +11,15 @@ const {
   updatePosition
 } = DropDown;
 
-export default class LanguagePicker extends Component {
+class LanguagePicker extends React.Component {
   componentDidMount() {
     updatePosition(this.refs.LANGUAGE);
     updatePosition(this.refs.OPTIONLIST);
   }
- 
+
   render() {
     let {
-      language, 
+      language,
       onLanguageChange
     } = this.props;
 
@@ -58,3 +55,5 @@ var styles = StyleSheet.create({
     backgroundColor: '#FFF'
   }
 })
+
+export default LanguagePicker;

@@ -1,12 +1,6 @@
-import React, {
-  View,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Component,
-  Dimensions
-} from "react-native"
-
+import React from 'react';
+import { View, Image, ScrollView,
+         StyleSheet, Dimensions } from "react-native"
 import FlexContainer from "./Container";
 import images from "./images";
 
@@ -30,12 +24,13 @@ let getImageLinks = (board, append) => {
 }
 
 let getImages = (images, styleMap = {}) => {
-  return images.map(image => 
-      <Image 
-        source={{uri: image}} 
-        style={[{width: getMeasurement(width, images.length), height: getMeasurement(height, images.length)}, (styleMap[image] || {})]} 
+  return images.map(image =>
+      <Image
+        key={'fake-key'}
+        source={{uri: image}}
+        style={[{width: getMeasurement(width, images.length), height: getMeasurement(height, images.length)}, (styleMap[image] || {})]}
         resizeMode="contain"
-      /> 
+      />
   )
 }
 
@@ -45,14 +40,14 @@ let getSelectorStyle = (selector, append, style) => {
   return map;
 }
 
-export default class LevelDisplay extends Component {
+class LevelDisplay extends React.Component {
 
   render() {
     let {
       attempt,
       level
     } = this.props;
-    
+
     let {
       board,
       style,
@@ -90,3 +85,5 @@ let styles = StyleSheet.create({
     backgroundColor: 'transparent'
   }
 });
+
+export default LevelDisplay;

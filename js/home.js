@@ -1,13 +1,7 @@
-import React, {
-  View,
-  Component,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  Dimensions,
-  ScrollView
-} from "react-native"
+import React from 'react';
+import { View, Text, Image,
+         StyleSheet, TouchableOpacity, Dimensions,
+         ScrollView } from "react-native";
 
 import getMessage from "./messages"
 import images from "./images"
@@ -18,87 +12,99 @@ let {
   width
 } = Dimensions.get('window');
 
-
-export default class Home extends Component {
+class Home extends React.Component {
 
   render() {
     let {
       language,
       onLanguageChange,
-      onGoToGame
+      onGoToGame,
+      onGoToPlayground
     } = this.props;
 
     return (
       <View style={{padding: 15, flex: 1}}>
-          <View style={styles.languageSpacer} />
-          <Text style={styles.title}>{getMessage('title', language)}</Text>
-          <View style={{height: 100, flexDirection: 'row'}}>
-            <View style={styles.imageContainer}>
-              <Image 
-                style={styles.image}
-                source={{uri: images.greenFrog}}
-                resizeMode="contain"
-              />
-            </View>
-            <View style={styles.imageContainer}>
-              <Image 
-                style={styles.image}
-                source={{uri: images.greenLilly}}
-                resizeMode="contain"
-              />
-            </View>
-            <View style={styles.imageContainer}>
-              <Image 
-                style={styles.image}
-                source={{uri: images.redFrog}}
-                resizeMode="contain"
-              />
-            </View>
-              <View style={styles.imageContainer}>
-              <Image 
-                style={styles.image}
-                source={{uri: images.redLilly}}
-                resizeMode="contain"
-              />
-            </View>
-            <View style={styles.imageContainer}>
-              <Image 
-                style={styles.image}
-                source={{uri: images.yellowFrog}}
-                resizeMode="contain"
-              />
-            </View>
-            <View style={styles.imageContainer}>
-              <Image 
-                style={styles.image}
-                source={{uri: images.yellowLilly}}
-                resizeMode="contain"
-              />
-            </View>
-          </View>
-
-          <View style={{flex: 1}}>
-            <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={onGoToGame}>
-              <View style={styles.start}>
-                <Text style={styles.startText}>{getMessage('next', language)}</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-
-
-          <View style={{flex: 1, alignItems: 'center'}}>
-            <Text>RN FlexboxFroggy adpated by Jason Brown (browniefed)</Text>
-            <Text>FlexboxFroggy created by Thomas Park</Text>
-          </View>
-
-              
-          <View style={styles.language}>
-            <Text style={{paddingVertical: 5}} >Select Language:</Text>
-            <LanguagePicker
-              language={language}
-              onLanguageChange={onLanguageChange}
+        <View style={styles.languageSpacer} />
+        <Text style={styles.title}>{getMessage('title', language)}</Text>
+        <View style={{height: 100, flexDirection: 'row'}}>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={{uri: images.greenFrog}}
+              resizeMode="contain"
             />
           </View>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={{uri: images.greenLilly}}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={{uri: images.redFrog}}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={{uri: images.redLilly}}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={{uri: images.yellowFrog}}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={{uri: images.yellowLilly}}
+              resizeMode="contain"
+            />
+          </View>
+        </View>
+
+        <View style={{flex: 1}}>
+          <TouchableOpacity
+            style={{alignItems: 'stretch', justifyContent: 'center'}}
+            onPress={onGoToGame}
+          >
+            <View style={styles.start}>
+              <Text style={styles.startText}>{getMessage('next', language)}</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{alignItems: 'stretch', justifyContent: 'center', marginTop: 20}}
+            onPress={onGoToPlayground}
+          >
+            <View style={styles.start}>
+              <Text style={styles.startText}>{getMessage('playground', language)}</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={{flex: 1, alignItems: 'center'}}>
+          <Text style={{fontSize: 13, fontWeight: '600'}}>🚀 by Rmotr</Text>
+          <Text style={{fontSize: 12}}>Adapted by Jason Brown (browniefed)</Text>
+          <Text style={{fontSize: 12}}>Created by Thomas Park</Text>
+        </View>
+
+
+        <View style={styles.language}>
+          <Text style={{paddingVertical: 5}} >Select Language:</Text>
+          <LanguagePicker
+            language={language}
+            onLanguageChange={onLanguageChange}
+          />
+        </View>
       </View>
     )
   }
@@ -107,7 +113,7 @@ export default class Home extends Component {
 
 let styles = StyleSheet.create({
   title: {
-    fontSize: 42,
+    fontSize: 34,
     fontWeight: 'bold',
     color: 'rgba(255,255,255,.8)',
     textAlign: 'center'
@@ -119,7 +125,7 @@ let styles = StyleSheet.create({
   start: {
     backgroundColor: colors.red,
     paddingVertical: 15,
-    paddingHorizontal: 80
+    alignItems: 'center'
   },
   startText: {
     color: '#FFF'
@@ -142,3 +148,5 @@ let styles = StyleSheet.create({
     height: 30
   }
 })
+
+export default Home;

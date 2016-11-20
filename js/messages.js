@@ -13,6 +13,20 @@ var messages = {
     'ko': '다음',
     'lt': 'Sekantis'
   },
+  playground: {
+    'en': 'Flexbox playground',
+    'de': 'Flexbox playground',
+    'fr': 'Flexbox playground',
+    'pt-br': 'Flexbox playground',
+    'es': 'Flexbox playground',
+    'ru': 'Flexbox playground',
+    'fa': 'Flexbox playground',
+    'zh-cn': 'Flexbox playground',
+    'tr': 'Flexbox playground',
+    'it': 'Flexbox playground',
+    'ko': 'Flexbox playground',
+    'lt': 'Flexbox playground'
+  },
   labelFooter: {
     'en': 'Flexbox Froggy is created by',
     'de': 'Flexbox Froggy wurde gemacht von',
