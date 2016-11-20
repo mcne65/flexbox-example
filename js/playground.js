@@ -2,74 +2,142 @@ import React from 'react';
 import { View, Text, Image,
          StyleSheet, TouchableOpacity, Dimensions,
          ScrollView } from "react-native";
-
-import getMessage from "./messages"
-import images from "./images"
-import colors from "./colors"
-import LanguagePicker from "./LanguagePicker";
+import colors from "./colors";
+import Toggle from "./Toggle";
 
 let {
   width
 } = Dimensions.get('window');
 
 class Playground extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.changeBox = this.changeBox.bind(this);
+  }
+
+  state = {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexWrap: 'nowrap',
+    q: 3
+  }
+
+  changeBox() {
+    if (this.state.q === 3) {
+      this.setState({q: 9});
+    } else if (this.state.q === 9) {
+      this.setState({q: 3});
+    }
+  }
 
   render() {
-    let {
-      language,
-      onLanguageChange,
-      onGoToGame,
-      onGoToPlayground
-    } = this.props;
+    const {flexDirection, justifyContent, alignItems, flexWrap} = this.state
+    const layoutStyle = {flexDirection, justifyContent, alignItems, flexWrap};
+
+    const primaryAxis = flexDirection === 'row' ? 'Horizontal' : 'Vertical'
+    const secondaryAxis = flexDirection === 'row' ? 'Vertical' : 'Horizontal'
+
+    let boxes;
+    if (this.state.q === 3) {
+      boxes = (
+        <View style={[styles.layout, layoutStyle]}>
+          <View style={styles.box} />
+          <View style={styles.box} />
+          <View style={styles.box} />
+        </View>
+      );
+    } else if (this.state.q === 9) {
+      boxes = (
+        <View style={[styles.layout, layoutStyle]}>
+          <View style={styles.box} />
+          <View style={styles.box} />
+          <View style={styles.box} />
+          <View style={styles.box} />
+          <View style={styles.box} />
+          <View style={styles.box} />
+          <View style={styles.box} />
+          <View style={styles.box} />
+          <View style={styles.box} />
+        </View>
+      )
+    }
 
     return (
-      <View style={{padding: 15, flex: 1}}>
-        <Text style={styles.title}>
-          PLAYGROUND
-        </Text>
-        <Text>under construction!</Text>
+      <View style={styles.container}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>
+            Flexbox Playground
+          </Text>
+          <Text
+            style={styles.subtitle}
+            onPress={this.changeBox}
+          >
+            🔄
+          </Text>
+        </View>
+
+        <Toggle
+          label={'flexDirection: Primary axis'}
+          value={flexDirection}
+          options={['row', 'column']}
+          onChange={(option) => this.setState({flexDirection: option})}
+        />
+        <Toggle
+          label={'justifyContent: (' + primaryAxis + ' distribution)'}
+          value={justifyContent}
+          options={['flex-start', 'center', 'flex-end', 'space-around', 'space-between']}
+          onChange={(option) => this.setState({justifyContent: option})}
+        />
+        <Toggle
+          label={'alignItems: (' + secondaryAxis + ' alignment)'}
+          value={alignItems}
+          options={['flex-start', 'center', 'flex-end', 'stretch']}
+          onChange={(option) => this.setState({alignItems: option})}
+        />
+        <Toggle
+          label={'flexWrap'}
+          value={flexWrap}
+          options={['wrap', 'nowrap']}
+          onChange={(option) => this.setState({flexWrap: option})}
+        />
+
+        {boxes}
       </View>
     )
   }
 }
 
-
 let styles = StyleSheet.create({
-  title: {
-    fontSize: 34,
-    fontWeight: 'bold',
-    color: 'rgba(255,255,255,.8)',
-    textAlign: 'center'
-  },
-  imageContainer: {
+  container: {
     flex: 1,
-    margin: 10
+    backgroundColor: colors.darkBlue
   },
-  start: {
-    backgroundColor: colors.red,
-    paddingVertical: 15,
-    alignItems: 'center'
+  titleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    margin: 5
   },
-  startText: {
+  title: {
+    color: '#FFF',
+    fontSize: 17,
+    fontWeight: '700',
+    marginHorizontal: 5
+  },
+  subtitle: {
     color: '#FFF'
   },
-  image: {
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    right: 0,
-    bottom: 0
+  layout: {
+    flex: 1,
+    marginTop: 10,
+    backgroundColor: colors.blue,
   },
-  language: {
-    position: 'absolute',
-    top: 0,
-    left: 10,
-    flexDirection: 'row',
-    alignItems: 'center'
+  box: {
+    padding: 25,
+    backgroundColor: colors.green,
+    margin: 5,
   },
-  languageSpacer: {
-    height: 30
-  }
-})
+});
 
 export default Playground;

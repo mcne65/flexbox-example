@@ -82,7 +82,7 @@ class Home extends React.Component {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={{alignItems: 'stretch', justifyContent: 'center', marginTop: 20}}
+            style={{alignItems: 'stretch', justifyContent: 'center', marginTop: 15}}
             onPress={onGoToPlayground}
           >
             <View style={styles.start}>
