@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, StyleSheet } from "react-native";
 
-const languages = ['en', 'de', 'pt-br', 'es', 'fr', 'ru', 'fa', 'zh-cn', 'tr', 'it', 'ko', 'lt'];
+const languages = ['en', 'de', 'pt-br',
+                   'es', 'fr', 'ru', 'fa',
+                   'zh-cn', 'tr', 'it', 'ko', 'lt'];
 
 import DropDown from 'react-native-dropdown';
 const {

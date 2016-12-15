@@ -2,7 +2,7 @@
   "name": "rmotr-flexboxfroggy",
   "description": "A game for learning CSS flexbox",
   "slug": "rmotr-flexboxfroggy",
-  "sdkVersion": "11.0.0",
+  "sdkVersion": "12.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#3A4767",
@@ -21,7 +21,7 @@
   },
   "appKey": "main",
   "androidStatusBarColor": "#000000",
-  "androidHideExponentNotificationInShellApp": "true",
+  "androidHideExponentNotificationInShellApp": true,
   "packagerOpts": {
     "assetExts": ["ttf"]
   }

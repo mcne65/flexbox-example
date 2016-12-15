@@ -79,5 +79,4 @@ let styles = StyleSheet.create({
   }
 });
 
-// AppRegistry.registerComponent('main', () => FlexboxFroggy);
 Exponent.registerRootComponent(FlexboxFroggy);
