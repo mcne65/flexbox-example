@@ -14,13 +14,21 @@ import levels from "./levels";
 import getMessage from "./messages";
 import shallowEqual from "./shallowEqual";
 
-let validProperties = [
-  'flexDirection',
-  'justifyContent',
-  'alignSelf',
-  'alignItems',
-  'flexWrap'
-]
+let validProperties = {
+  flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
+  justifyContent: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around'],
+  alignItems: ['flex-start', 'flex-end', 'center', 'stretch', 'baseline'],
+  flexWrap: ['wrap', 'nowrap', 'wrap-reverse'],
+  alignContent: ['flex-start', 'flex-end', 'center', 'stretch', 'space-between', 'space-around'],
+  // flexFlow: [],
+
+  flex: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  alignSelf: ['flex-start', 'flex-end', 'center', 'stretch', 'space-between', 'space-around'],
+  flexGrow: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  flexShrink: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  // flexBasis: [],
+  order: [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
 
 let isLevelWon = (style, attempt) => {
   return shallowEqual(style, attempt);
@@ -31,18 +39,27 @@ let parseAttempt = (style) => {
   let retStyle = {};
   let value = (parsedStyle[1] || '').replace(/[\'\"\s]/g, '');
 
-  if (validProperties.indexOf(parsedStyle[0]) !== -1 && value) {
-    retStyle[parsedStyle[0]] = value;
+  // check attribute
+  if (validProperties[parsedStyle[0]] && value) {
+      // check attribute value
+      if (validProperties[parsedStyle[0]].indexOf(value) !== -1) {
+        retStyle[parsedStyle[0]] = value;
+      }
   }
 
   return retStyle;
 }
 
 let parseValues = (values) => {
-  return Object.keys(values).map((key) => values[key]).map(parseAttempt).reduce((i, n) => {
-    return { ...i, ...n }
-  }, {})
+  const keys = Object.keys(values);
+  const rawValues = keys.map(key => values[key]);
+  const parsedValues = rawValues.map(value => parseAttempt(value));
+  const reducedValues = parsedValues.reduce((i, n) => {
+    return { ...i, ...n };
+  }, {});
 
+  return reducedValues;
+  // return [];
 }
 
 class Play extends React.Component {

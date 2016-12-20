@@ -35,6 +35,7 @@ class LevelPlay extends React.Component {
                       style={styles.input}
                       autoCapitalize="none"
                       autoCorrect={false}
+                      underlineColorAndroid={'transparent'}
                     />
                     <Text>,</Text>
                   </View>

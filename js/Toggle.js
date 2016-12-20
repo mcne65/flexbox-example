@@ -15,6 +15,7 @@ class Toggle extends React.Component {
 
     return (
       <TouchableOpacity
+        key={value+option}
         style={[styles.option, option === value && styles.activeOption]}
         onPress={this.onPress.bind(this, option)}
       >

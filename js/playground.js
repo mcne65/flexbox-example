@@ -74,7 +74,7 @@ class Playground extends React.Component {
             style={styles.subtitle}
             onPress={this.changeBox}
           >
-            🔄
+            {this.state.q === 3 ? '➕' : '➖'}
           </Text>
         </View>
 

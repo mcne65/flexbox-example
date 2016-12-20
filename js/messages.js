@@ -1,17 +1,9 @@
 var messages = {
+  play: {
+    'en': 'Play with froggies 🐸'
+  },
   next: {
-    'en': 'Next',
-    'de': 'Weiter',
-    'fr': 'Suivant',
-    'pt-br': 'Próximo',
-    'es': 'Siguiente',
-    'ru': 'Следующий',
-    'fa': 'مرحله بعدی',
-    'zh-cn': '继续',
-    'tr': 'Sonraki',
-    'it': 'Prossima',
-    'ko': '다음',
-    'lt': 'Sekantis'
+    'en': 'Next'
   },
   help: {
     'en': 'Help',
@@ -42,18 +34,7 @@ var messages = {
     'lt': 'Sekantis'
   },
   playground: {
-    'en': 'Flexbox playground',
-    'de': 'Flexbox playground',
-    'fr': 'Flexbox playground',
-    'pt-br': 'Flexbox playground',
-    'es': 'Flexbox playground',
-    'ru': 'Flexbox playground',
-    'fa': 'Flexbox playground',
-    'zh-cn': 'Flexbox playground',
-    'tr': 'Flexbox playground',
-    'it': 'Flexbox playground',
-    'ko': 'Flexbox playground',
-    'lt': 'Flexbox playground'
+    'en': 'Flexbox playground 🎮'
   },
   labelFooter: {
     'en': 'Flexbox Froggy is created by',

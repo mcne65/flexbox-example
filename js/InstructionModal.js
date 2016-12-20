@@ -24,6 +24,7 @@ class InstructionModal extends React.Component {
         transparent={true}
         animationType="fade"
         visible={this.props.visible}
+        onRequestClose={() => {}}
       >
         <FlexContainer style={styles.modalContent}>
           <ScrollView>

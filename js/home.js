@@ -1,29 +1,25 @@
 import React from 'react';
 import { View, Text, Image,
-         StyleSheet, TouchableOpacity, Dimensions,
-         ScrollView } from "react-native";
+         StyleSheet, TouchableOpacity,
+         Dimensions } from "react-native";
 
 import getMessage from "./messages"
 import images from "./images"
 import colors from "./colors"
 
-let {
-  width
-} = Dimensions.get('window');
+let { width } = Dimensions.get('window');
 
 class Home extends React.Component {
-
   render() {
-    let {
-      language,
-      onGoToGame,
-      onGoToPlayground
-    } = this.props;
+    let { language, onGoToGame, onGoToPlayground } = this.props;
 
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>{getMessage('title', language)}</Text>
-        <View style={{height: 100, flexDirection: 'row'}}>
+        <Text style={styles.title}>
+          {getMessage('title', language)}
+        </Text>
+
+        <View style={styles.frogsContainer}>
           <View style={styles.imageContainer}>
             <Image
               style={styles.image}
@@ -74,7 +70,7 @@ class Home extends React.Component {
             onPress={onGoToGame}
           >
             <View style={styles.start}>
-              <Text style={styles.startText}>{getMessage('next', language)}</Text>
+              <Text style={styles.startText}>{getMessage('play', language)}</Text>
             </View>
           </TouchableOpacity>
 
@@ -88,16 +84,15 @@ class Home extends React.Component {
           </TouchableOpacity>
         </View>
 
-        <View style={{alignItems: 'center'}}>
-          <Text style={{fontSize: 13, fontWeight: '600'}}>Extended by Rmotr 🚀</Text>
-          <Text style={{fontSize: 12}}>Adapted by Jason Brown (browniefed)</Text>
-          <Text style={{fontSize: 12}}>Created by Thomas Park</Text>
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>Extended by Rmotr 🚀</Text>
+          <Text style={styles.footerSubtext}>Adapted by Jason Brown (browniefed)</Text>
+          <Text style={styles.footerSubtext}>Created by Thomas Park</Text>
         </View>
       </View>
     )
   }
 }
-
 
 let styles = StyleSheet.create({
   container: {
@@ -106,22 +101,34 @@ let styles = StyleSheet.create({
     justifyContent: 'space-around'
   },
   title: {
-    fontSize: 34,
+    fontSize: 32,
     fontWeight: 'bold',
     color: 'rgba(255,255,255,.8)',
-    textAlign: 'center'
+    textAlign: 'center',
+    paddingHorizontal: 10
+  },
+  frogsContainer: {
+    height: 100,
+    flexDirection: 'row',
+    paddingHorizontal: 10
   },
   imageContainer: {
     flex: 1,
     margin: 10
   },
   start: {
-    backgroundColor: colors.red,
+    backgroundColor: colors.lightBlue,
     paddingVertical: 15,
-    alignItems: 'center'
+    alignItems: 'center',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 1
   },
   startText: {
-    color: '#FFF'
+    color: '#FFF',
+    fontSize: 14,
+    fontWeight: '600'
   },
   image: {
     position: 'absolute',
@@ -136,6 +143,18 @@ let styles = StyleSheet.create({
     left: 10,
     flexDirection: 'row',
     alignItems: 'center'
+  },
+  footer: {
+    alignItems: 'center'
+  },
+  footerText: {
+    color: '#FFF',
+    fontSize: 13,
+    fontWeight: '600'
+  },
+  footerSubtext: {
+    color: '#EEE',
+    fontSize: 12
   }
 })
 

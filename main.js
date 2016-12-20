@@ -1,6 +1,7 @@
 import Exponent from 'exponent';
 import React from 'react';
-import { StyleSheet, View, Navigator} from "react-native";
+import { StyleSheet, View, Navigator,
+         Platform, UIManager } from "react-native";
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 import Play from "./js/play"
@@ -15,6 +16,10 @@ let routes = {
   home: {component: Home},
   play: {component: Play},
   playground: {component: Playground}
+}
+
+if (Platform.OS === 'android') {
+  UIManager.setLayoutAnimationEnabledExperimental(true)
 }
 
 function renderScene(
@@ -61,7 +66,8 @@ class FlexboxFroggy extends React.Component {
           initialRoute={routes.home}
           renderScene={route => renderScene(route.component, this.state.language, route.level, onGoToGame, onGoToLevel, onGoToHome, onGoToPlayground)}
         />
-        <KeyboardSpacer />
+
+        { Platform.OS === 'ios' && <KeyboardSpacer /> }
       </View>
     );
   }
@@ -70,7 +76,7 @@ class FlexboxFroggy extends React.Component {
 let styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.green
+    backgroundColor: colors.blue
   },
   spacer: {
     marginTop: 32
