@@ -25,7 +25,7 @@ let styles = StyleSheet.create({
   start: {
     backgroundColor: colors.red,
     paddingVertical: 5,
-    width: 50,
+    paddingHorizontal: 3,
     alignItems: 'center',
     justifyContent: 'center'
   },

@@ -17,7 +17,6 @@ class LevelInstruction extends React.Component {
         <HTMLView
           value={instruction}
           stylesheet={styles}
-          onLinkPress={() => {}}
         />
       </FlexContainer>
     )

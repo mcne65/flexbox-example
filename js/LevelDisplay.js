@@ -4,10 +4,7 @@ import { View, Image, ScrollView,
 import FlexContainer from "./Container";
 import images from "./images";
 
-let {
-  width,
-  height
-} = Dimensions.get('window');
+let { width, height } = Dimensions.get('window');
 
 let colorMap = {
   'g': 'green',
@@ -26,7 +23,7 @@ let getImageLinks = (board, append) => {
 let getImages = (images, styleMap = {}) => {
   return images.map(image =>
       <Image
-        key={'fake-key'}
+        key={image}
         source={{uri: image}}
         style={[{width: getMeasurement(width, images.length), height: getMeasurement(height, images.length)}, (styleMap[image] || {})]}
         resizeMode="contain"
@@ -41,23 +38,11 @@ let getSelectorStyle = (selector, append, style) => {
 }
 
 class LevelDisplay extends React.Component {
-
   render() {
-    let {
-      attempt,
-      level
-    } = this.props;
-
-    let {
-      board,
-      style,
-      defaultStyle,
-      selector
-    } = level;
-
-    let pondStyle = !selector ? style : {};
-    let pondAttempt = !selector ? {...defaultStyle, ...attempt} : {};
-
+    let { attempt, level } = this.props;
+    let { board, style, defaultStyle, selector } = level;
+    let pondStyle = !selector ? {...style, 'flexDirection': 'row' } : {};
+    let pondAttempt = !selector ? {...defaultStyle, ...attempt, 'flexDirection': 'row'} : {};
     let selectorStyle = selector ? getSelectorStyle(selector, 'Lilly', style) : {};
     let selectorAttempt = selector ? getSelectorStyle(selector, 'Frog', {...defaultStyle, ...attempt}) : {};
 

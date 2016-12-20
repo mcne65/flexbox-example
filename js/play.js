@@ -1,20 +1,18 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet,
-         LayoutAnimation } from "react-native";
+import { View, StyleSheet, Text,
+         LayoutAnimation, Modal } from "react-native";
 
 import FlexContainer from "./Container";
-import colors from "./colors";
-import shallowEqual from "./shallowEqual";
-
 import LevelDisplay from "./LevelDisplay";
-import LevelInstruction from "./LevelInstruction";
 import LevelPlay from "./LevelPlay";
+import NextLevel from "./NextLevel";
+import InstructionModal from "./InstructionModal";
 
+import docs from "./docs";
+import colors from "./colors";
 import levels from "./levels";
 import getMessage from "./messages";
-import docs from "./docs";
-
-import NextLevel from "./NextLevel";
+import shallowEqual from "./shallowEqual";
 
 let validProperties = [
   'flexDirection',
@@ -42,10 +40,7 @@ let parseAttempt = (style) => {
 
 let parseValues = (values) => {
   return Object.keys(values).map((key) => values[key]).map(parseAttempt).reduce((i, n) => {
-    return {
-      ...i,
-      ...n
-    }
+    return { ...i, ...n }
   }, {})
 
 }
@@ -55,10 +50,12 @@ class Play extends React.Component {
     super(props);
     this.state = {
       attempt: '',
-      values: {}
+      values: {},
+      modalOpen: false,
     }
 
     this.changeText = this.changeText.bind(this);
+    this.toggleHelpModal = this.toggleHelpModal.bind(this);
   }
 
   changeText(key, value) {
@@ -71,69 +68,71 @@ class Play extends React.Component {
     });
   }
 
+  toggleHelpModal() {
+    this.setState({
+      modalOpen: !this.state.modalOpen
+    });
+  }
+
   render() {
-    let {
-      langguage,
-      attempt,
-      values
-    } = this.state;
-
-    let {
-      language,
-      level,
-      onGoToLevel,
-      onGoToHome
-    } = this.props;
-
-
+    let { langguage, attempt, values } = this.state;
+    let { language, level, onGoToLevel, onGoToHome } = this.props;
     let playLevel = levels[level];
     let parsedAttempt = parseValues(values);
     let instruction = levels[level].instructions[language]
 
     return (
       <FlexContainer>
-        <FlexContainer style={styles.pond}>
+        <InstructionModal
+          level={level + 1}
+          visible={this.state.modalOpen}
+          language={this.props.language}
+          handleClose={this.toggleHelpModal}
+          instruction={instruction}
+        />
+
+        <FlexContainer style={[styles.pond, {flex: 2, padding: 5}]}>
           <LevelDisplay
             level={playLevel}
             attempt={parsedAttempt}
           />
         </FlexContainer>
-        <FlexContainer>
 
-          <FlexContainer>
-            <ScrollView>
-              <LevelInstruction
-                instruction={instruction}
-              />
-            </ScrollView>
-          </FlexContainer>
-          <FlexContainer>
-            <LevelPlay
-              onChangeText={this.changeText}
-              values={values}
-              before={playLevel.before}
-              after={playLevel.after}
-              keys={Object.keys(playLevel.style)}
-            />
-            <View style={styles.nextButton}>
-              <NextLevel
-                win={isLevelWon(playLevel.style, parsedAttempt)}
-                onPress={() => {
-                  if (!isLevelWon(playLevel.style, parsedAttempt)) return;
-                  if (playLevel.name === 'win') return onGoToHome()
-                  onGoToLevel(level + 1);
-                }}
-              >
-                {getMessage('next', language)}
-              </NextLevel>
-            </View>
-          </FlexContainer>
+        <FlexContainer>
+          <LevelPlay
+            onChangeText={this.changeText}
+            values={values}
+            before={playLevel.before}
+            after={playLevel.after}
+            keys={Object.keys(playLevel.style)}
+          />
+
+          <View style={styles.helpButton}>
+            <NextLevel
+              win={true}
+              onPress={this.toggleHelpModal}
+            >
+              {getMessage('help', language)}
+            </NextLevel>
+          </View>
+
+          <View style={styles.nextButton}>
+            <NextLevel
+              win={isLevelWon(playLevel.style, parsedAttempt)}
+              onPress={() => {
+                if (!isLevelWon(playLevel.style, parsedAttempt)) return;
+                if (playLevel.name === 'win') return onGoToHome()
+                onGoToLevel(level + 1);
+              }}
+            >
+              {getMessage('next', language)}
+            </NextLevel>
+          </View>
         </FlexContainer>
       </FlexContainer>
     )
   }
 }
-
 
 Play.defaultProps = {
   level: 0
@@ -148,6 +147,12 @@ let styles = StyleSheet.create({
     position: 'absolute',
     right: 10,
     bottom: 10
+  },
+  helpButton: {
+    paddingVertical: 5,
+    position: 'absolute',
+    right: 10,
+    bottom: 40
   }
 });
 

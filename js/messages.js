@@ -13,6 +13,34 @@ var messages = {
     'ko': '다음',
     'lt': 'Sekantis'
   },
+  help: {
+    'en': 'Help',
+    'de': 'Weiter',
+    'fr': 'Suivant',
+    'pt-br': 'Próximo',
+    'es': 'Siguiente',
+    'ru': 'Следующий',
+    'fa': 'مرحله بعدی',
+    'zh-cn': '继续',
+    'tr': 'Sonraki',
+    'it': 'Prossima',
+    'ko': '다음',
+    'lt': 'Sekantis'
+  },
+  close: {
+    'en': 'Close',
+    'de': 'Weiter',
+    'fr': 'Suivant',
+    'pt-br': 'Próximo',
+    'es': 'Siguiente',
+    'ru': 'Следующий',
+    'fa': 'مرحله بعدی',
+    'zh-cn': '继续',
+    'tr': 'Sonraki',
+    'it': 'Prossima',
+    'ko': '다음',
+    'lt': 'Sekantis'
+  },
   playground: {
     'en': 'Flexbox playground',
     'de': 'Flexbox playground',

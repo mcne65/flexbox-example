@@ -19,14 +19,13 @@ let routes = {
 
 function renderScene(
   Comp, language, level,
-  onLanguageChange, onGoToGame, onGoToLevel,
+  onGoToGame, onGoToLevel,
   onGoToHome, onGoToPlayground
 ) {
   return (
       <Comp
         language={language}
         level={level}
-        onLanguageChange={onLanguageChange}
         onGoToHome={onGoToHome}
         onGoToGame={onGoToGame}
         onGoToLevel={onGoToLevel}
@@ -44,7 +43,6 @@ class FlexboxFroggy extends React.Component {
   }
 
   render() {
-    let onLanguageChange = (language) => this.setState({language});
     let onGoToGame = () => this.refs.navigator.push(routes.play);
     let onGoToPlayground = () => this.refs.navigator.push(routes.playground);
     let onGoToHome = () => {
@@ -61,7 +59,7 @@ class FlexboxFroggy extends React.Component {
           ref="navigator"
           style={styles.spacer}
           initialRoute={routes.home}
-          renderScene={route => renderScene(route.component, this.state.language, route.level, onLanguageChange, onGoToGame, onGoToLevel, onGoToHome, onGoToPlayground)}
+          renderScene={route => renderScene(route.component, this.state.language, route.level, onGoToGame, onGoToLevel, onGoToHome, onGoToPlayground)}
         />
         <KeyboardSpacer />
       </View>

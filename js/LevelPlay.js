@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, TextInput } from "react-native";
 
 import FlexContainer from "./Container";
 import colors from "./colors";
@@ -8,35 +8,34 @@ import HTMLView from 'react-native-htmlview';
 
 class LevelPlay extends React.Component {
   render() {
-    let {
-      onChangeText,
-      before,
-      after,
-      values,
-      keys
-    } = this.props;
+    let { onChangeText, before, after, values, keys } = this.props;
 
     return (
       <FlexContainer style={styles.play}>
-        <View style={styles.darkLine}>
+        <View style={styles.darkLine} />
 
-        </View>
         <FlexContainer style={styles.editorContainer}>
           <HTMLView
             value={"<p>" + before + "</p>"}
             stylesheet={styles}
           />
+
           {
             keys.map((key) => {
               return (
-                <TextInput
-                  key={'fake-key'}
-                  value={values[key] || ''}
-                  onChangeText={(value) => onChangeText(key, value)}
-                  style={styles.input}
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                />
+                <View
+                  style={styles.inputRow}
+                  key={key}
+                >
+                  <TextInput
+                    value={values[key] || ''}
+                    onChangeText={(value) => onChangeText(key, value)}
+                    style={styles.input}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                  />
+                  <Text>,</Text>
+                </View>
               )
             })
           }
@@ -53,25 +52,38 @@ class LevelPlay extends React.Component {
 
 let styles = StyleSheet.create({
   play: {
-    padding: 5,
     flexDirection: 'row'
   },
   darkLine: {
     backgroundColor: colors.darkGrey,
-    width: 20
+    width: 20,
   },
   editorContainer: {
-    backgroundColor: colors.lightGrey
+    backgroundColor: colors.lightGrey,
+    padding: 5
   },
-  input: {
-    height: 20,
-    backgroundColor: '#FFF',
+  inputRowContainer: {
+    marginHorizontal: 10,
+    marginVertical: 2
+  },
+  inputRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
     marginLeft: 8,
     marginRight: 58
   },
+  input: {
+    flex: 1,
+    height: 28,
+    fontSize: 15,
+    backgroundColor: '#FFF',
+    borderWidth: 3,
+    borderColor: colors.lightGrey,
+    paddingLeft: 6
+  },
   p: {
-    color: '#aaa',
-    fontSize: 20
+    color: colors.darkGrey,
+    fontSize: 16
   }
 })
 

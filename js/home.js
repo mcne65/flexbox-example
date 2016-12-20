@@ -6,7 +6,6 @@ import { View, Text, Image,
 import getMessage from "./messages"
 import images from "./images"
 import colors from "./colors"
-import LanguagePicker from "./LanguagePicker";
 
 let {
   width
@@ -17,14 +16,12 @@ class Home extends React.Component {
   render() {
     let {
       language,
-      onLanguageChange,
       onGoToGame,
       onGoToPlayground
     } = this.props;
 
     return (
-      <View style={{padding: 15, flex: 1}}>
-        <View style={styles.languageSpacer} />
+      <View style={styles.container}>
         <Text style={styles.title}>{getMessage('title', language)}</Text>
         <View style={{height: 100, flexDirection: 'row'}}>
           <View style={styles.imageContainer}>
@@ -71,7 +68,7 @@ class Home extends React.Component {
           </View>
         </View>
 
-        <View style={{flex: 1}}>
+        <View>
           <TouchableOpacity
             style={{alignItems: 'stretch', justifyContent: 'center'}}
             onPress={onGoToGame}
@@ -91,19 +88,10 @@ class Home extends React.Component {
           </TouchableOpacity>
         </View>
 
-        <View style={{flex: 1, alignItems: 'center'}}>
+        <View style={{alignItems: 'center'}}>
           <Text style={{fontSize: 13, fontWeight: '600'}}>🚀 by Rmotr</Text>
           <Text style={{fontSize: 12}}>Adapted by Jason Brown (browniefed)</Text>
           <Text style={{fontSize: 12}}>Created by Thomas Park</Text>
-        </View>
-
-
-        <View style={styles.language}>
-          <Text style={{paddingVertical: 5}} >Select Language:</Text>
-          <LanguagePicker
-            language={language}
-            onLanguageChange={onLanguageChange}
-          />
         </View>
       </View>
     )
@@ -112,6 +100,11 @@ class Home extends React.Component {
 
 
 let styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+  },
   title: {
     fontSize: 34,
     fontWeight: 'bold',
@@ -143,9 +136,6 @@ let styles = StyleSheet.create({
     left: 10,
     flexDirection: 'row',
     alignItems: 'center'
-  },
-  languageSpacer: {
-    height: 30
   }
 })
 
