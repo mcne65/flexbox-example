@@ -6,7 +6,7 @@ var levels = [
     },
     board: 'g',
     style: {'justifyContent': 'flex-end'},
-    before: "pond:{",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -16,7 +16,7 @@ var levels = [
     },
     board: 'gy',
     style: {'justifyContent': 'center'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -26,7 +26,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'justifyContent': 'space-around'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -36,7 +36,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'justifyContent': 'space-between'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -46,7 +46,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'alignItems': 'flex-end'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -56,7 +56,7 @@ var levels = [
     },
     board: 'g',
     style: {'justifyContent': 'center', 'alignItems': 'center'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -66,7 +66,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'justifyContent': 'space-around', 'alignItems': 'flex-end'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -76,7 +76,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flexDirection': 'row-reverse'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -86,7 +86,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flexDirection': 'column'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -96,7 +96,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flexDirection': 'row-reverse', 'justifyContent': 'flex-end'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -106,7 +106,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flexDirection': 'column', 'justifyContent': 'flex-end'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -116,7 +116,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flexDirection': 'column-reverse', 'justifyContent': 'space-between'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   {
@@ -126,7 +126,7 @@ var levels = [
     },
     board: 'gyr',
     style: {'flexDirection': 'row-reverse', 'justifyContent': 'center', 'alignItems': 'flex-end'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}"
   },
   // {
@@ -137,7 +137,7 @@ var levels = [
   //   board: 'gyr',
   //   selector: 'y',
   //   style: {'order': 1},
-  //   before: "pond:{\n justifyContent: 'flex-start'\n}\nyellow: {",
+  //   before: "pond: {\n   flexDirection: 'row',\n   justifyContent: 'flex-start'\n}\nyellow: {",
   //   after: "}"
   // },
   // {
@@ -148,29 +148,18 @@ var levels = [
   //   board: 'gggrg',
   //   selector: 'r',
   //   style: {'order': -1},
-  //   before: "pond:{\n justifyContent: 'flex-start'\n}\nred: {",
+  //   before: "pond: {\n   flexDirection: 'row',\n   justifyContent: 'flex-start'\n}\nred: {",
   //   after: "}"
   // },
   {
     name: 'alignSelf 1',
     instructions: {
-      'en': '<p>Another property you can apply to individual items is <code>alignSelf</code>. This property accepts the same values as <code>alignItems</code> and its value for the specific item.</p>',
-      'de': '<p><code>alignSelf</code> ist eine weitere Eigenschaft f&uuml;r einzelne Elemente. Sie akzeptiert die gleichen Werte wie <code>alignItems</code>.</p>',
-      'pt-br': '<p>Outra propriedade que você pode aplicar para itens individuais é <code>alignSelf</code>. Esta propriedade aceita os mesmos valores que <code>alignItems</code> e seus valores são usados para o item específico.</p>',
-      'es': '<p>Otra propiedad que puedes aplicar a elementos individuales es <code>alignSelf</code>. Esta propiedad acepta los mismos valores de <code>alignItems</code> y sus valores son usados para un elemento específico</p>',
-      'fr': '<p>Une autre propriété que vous pouvez appliquer sur des éléments individuels est <code>alignSelf</code>. Cette propriété accepte les mêmes valeurs que <code>alignItems</code>, mais s\'applique seulement à l\'élément ciblé.</p>',
-      'ru': '<p>Еще одно свойство, которое ты можешь применить к определенному элементу это <code>alignSelf</code>. Это свойство принимает те же значения, что и <code>alignItems</code>.</p>',
-      'fa': '<p>خاصیت دیگری وجود دارد که به شما امکان تراز بندی فردی (یک ایتم) را می دهد، این خاصت <code>alignSelf</code> نام دارد. مقادیر این خاصیت دقیقا هما مقادیر خاصیت <code>alignItems</code> است.</p>',
-      'zh-cn': '<p>另一个你可以使用的控制单个元素的属性是<code>alignSelf</code>。这个属性接受和<code>alignItems</code>一样的那些值。</p>',
-      'tr': '<p>Öğe başına uygulayabileceğiniz bir başka kural ise <code>alignSelf</code>\'tir. Bu kural <code>alignItems</code> kuralı ile aynı değerleri alır ve bu değeri o öğe için uygular.</p>',
-      'it': '<p>Un\'altra proprieta\' che e\' possibile applicare ai singoli elementi e\' <code>alignSelf</code>. Essa accetta gli stessi valori di <code>alignItems</code>.</p>',
-      'ko': '<p><code>alignSelf</code>는 개별 요소에 적용할 수 있는 또 다른 속성입니다. 이 속성은 <code>alignItems</code>가 사용하는 값들을 인자로 받으며, 그 값들은 지정한 요소에만 적용됩니다.</p>',
-      'lt': '<p>Kita komanda, kurią galima pritaikyti pavieniams elementams yra <code>alignSelf</code>. Ši komanda reaguoja į tas pačias vertes, kaip ir <code>alignItems</code>.</p>',
+      'en': '<p>Another property you can apply to individual items is <code>alignSelf</code>. This property accepts the same values as <code>alignItems</code> and its value for the specific item.</p>'
     },
     board: 'ggygg',
     selector: 'y',
     style: {'alignSelf': 'flex-end'},
-    before: "pond:{\n justifyContent: 'flex-start',\n alignItems: 'flex-start'\n}\nyellow: {",
+    before: "pond: {\n   flexDirection: 'row',\n   justifyContent: 'flex-start',\n   alignItems: 'flex-start'\n}\nyellow: {",
     after: "}"
   },
   // {
@@ -181,7 +170,7 @@ var levels = [
   //   board: 'ygygg',
   //   selector: 'y',
   //   style: {'alignSelf': 'flex-end', 'order': 1},
-  //   before: "pond:{\n justifyContent: 'flex-start',\n alignItems: 'flex-start'\n}\nyellow: {",
+  //   before: "pond: {\n   flexDirection: 'row',\n   justifyContent: 'flex-start',\n alignItems: 'flex-start'\n}\nyellow: {",
   //   after: "}"
   // },
   {
@@ -191,7 +180,7 @@ var levels = [
     },
     board: 'ygggggr',
     style: {'flexWrap': 'wrap'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}",
     fluid: 5
   },
@@ -202,7 +191,7 @@ var levels = [
     },
     board: 'gggggrrrrryyyyy',
     style: {'flexDirection': 'column', 'flexWrap': 'wrap'},
-    before: "pond: {",
+    before: "pond: {\n   flexDirection: 'row',",
     after: "}",
     fluid: 5
   },
@@ -213,7 +202,7 @@ var levels = [
   //   },
   //   board: 'gggggrrrrryyyyy',
   //   style: {'flexFlow': 'row wrap'},
-  //   before: "pond: {",
+  //   before: "pond: {\n   flexDirection: 'row',",
   //   after: "}",
   //   fluid: 5
   // },
@@ -224,7 +213,7 @@ var levels = [
   //   },
   //   board: 'ggggggggggggggg',
   //   style: {'alignContent': 'flex-end', 'flexWrap': 'wrap'},
-  //   before: "pond: {",
+  //   before: "pond: {\n   flexDirection: 'row',",
   //   after: "}",
   //   fluid: 5
   // },
@@ -235,7 +224,7 @@ var levels = [
   //   },
   //   board: 'ggggggggggggggg',
   //   style: {'alignContent': 'space-around', 'flexWrap': 'wrap'},
-  //   before: "pond: {",
+  //   before: "pond: {\n   flexDirection: 'row',",
   //   after: "}",
   //   fluid: 5
   // },
@@ -246,7 +235,7 @@ var levels = [
   //   },
   //   board: 'rrrgggyyy',
   //   style: {'alignContent': 'flex-start', 'flexWrap': 'wrap', 'flexDirection': 'column-reverse'},
-  //   before: "pond: {",
+  //   before: "pond: {\n   flexDirection: 'row',",
   //   after: "}",
   //   fluid: 5
   // },
@@ -257,7 +246,7 @@ var levels = [
   //   },
   //   board: 'rrrgggyyy',
   //   style: {'alignContent': 'center', 'flexWrap': 'wrap', 'flexDirection': 'column-reverse'},
-  //   before: "pond: {",
+  //   before: "pond: {\n   flexDirection: 'row',",
   //   after: "}",
   //   fluid: 5
   // },
@@ -268,7 +257,7 @@ var levels = [
   //   },
   //   board: 'rggggyy',
   //   style: { 'alignContent': 'space-between', 'flexWrap': 'wrap-reverse', 'flexDirection': 'columnReverse', 'justifyContent': 'center' },
-  //   before: "pond: {",
+  //   before: "pond: {\n   flexDirection: 'row',",
   //   after: "}",
   //   fluid: 4
   // },

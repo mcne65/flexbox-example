@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet,
+         ScrollView, TextInput } from "react-native";
 
 import FlexContainer from "./Container";
 import colors from "./colors";
@@ -15,35 +16,37 @@ class LevelPlay extends React.Component {
         <View style={styles.darkLine} />
 
         <FlexContainer style={styles.editorContainer}>
-          <HTMLView
-            value={"<p>" + before + "</p>"}
-            stylesheet={styles}
-          />
+          <ScrollView>
+            <HTMLView
+              value={"<p>" + before + "</p>"}
+              stylesheet={styles}
+            />
 
-          {
-            keys.map((key) => {
-              return (
-                <View
-                  style={styles.inputRow}
-                  key={key}
-                >
-                  <TextInput
-                    value={values[key] || ''}
-                    onChangeText={(value) => onChangeText(key, value)}
-                    style={styles.input}
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                  />
-                  <Text>,</Text>
-                </View>
-              )
-            })
-          }
+            {
+              keys.map((key) => {
+                return (
+                  <View
+                    style={styles.inputRow}
+                    key={key}
+                  >
+                    <TextInput
+                      value={values[key] || ''}
+                      onChangeText={(value) => onChangeText(key, value)}
+                      style={styles.input}
+                      autoCapitalize="none"
+                      autoCorrect={false}
+                    />
+                    <Text>,</Text>
+                  </View>
+                )
+              })
+            }
 
-          <HTMLView
-            value={"<p>" + after + "</p>"}
-            stylesheet={styles}
-          />
+            <HTMLView
+              value={"<p>" + after + "</p>"}
+              stylesheet={styles}
+            />
+          </ScrollView>
         </FlexContainer>
       </FlexContainer>
     )
@@ -83,7 +86,7 @@ let styles = StyleSheet.create({
   },
   p: {
     color: colors.darkGrey,
-    fontSize: 16
+    fontSize: 13
   }
 })
 

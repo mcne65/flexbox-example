@@ -3,7 +3,7 @@ let colors = {
   blue: '#1F5768',
   darkBlue: '#0C4150',
   red: '#F12D22',
-  darkGrey: '#999',
+  darkGrey: '#777',
   lightGrey: '#ddd'
 }
 
