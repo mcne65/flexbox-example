@@ -12,23 +12,10 @@ let colorMap = {
   'y': 'yellow'
 };
 
-let getMeasurement = (value, amount) => Math.min(Math.floor((value/2)/amount), 75)
-
 let getImageLinks = (board, append) => {
   return board.split('').map((piece) => {
     return images[(colorMap[piece] + append)]
   })
-}
-
-let getImages = (images, styleMap = {}) => {
-  return images.map(image =>
-      <Image
-        key={image}
-        source={{uri: image}}
-        style={[{width: getMeasurement(width, images.length), height: getMeasurement(height, images.length)}, (styleMap[image] || {})]}
-        resizeMode="contain"
-      />
-  )
 }
 
 let getSelectorStyle = (selector, append, style) => {
@@ -38,11 +25,28 @@ let getSelectorStyle = (selector, append, style) => {
 }
 
 class LevelDisplay extends React.Component {
+
   render() {
+    let { fluid } = this.props.level;
+    let getMeasurement = (value, amount) => fluid ?
+                                            (value/fluid)-fluid :
+                                            Math.min(Math.floor((value/2)/amount), 75);
+
+    let getImages = (images, styleMap = {}) => {
+      return images.map((image, index) =>
+          <Image
+            key={image+index}
+            source={{uri: image}}
+            style={[{width: getMeasurement(width, images.length), height: getMeasurement(height, images.length)}, (styleMap[image] || {})]}
+            resizeMode="contain"
+          />
+      )
+    }
+
     let { attempt, level } = this.props;
     let { board, style, defaultStyle, selector } = level;
-    let pondStyle = !selector ? {...style, 'flexDirection': 'row' } : {};
-    let pondAttempt = !selector ? {...defaultStyle, ...attempt, 'flexDirection': 'row'} : {};
+    let pondStyle = !selector ? [ styles.row, style] : [ styles.selector ];
+    let pondAttempt = !selector ? [ styles.row, defaultStyle, attempt ] : [ styles.selector ];
     let selectorStyle = selector ? getSelectorStyle(selector, 'Lilly', style) : {};
     let selectorAttempt = selector ? getSelectorStyle(selector, 'Frog', {...defaultStyle, ...attempt}) : {};
 
@@ -61,6 +65,13 @@ class LevelDisplay extends React.Component {
 
 
 let styles = StyleSheet.create({
+  row: {
+    flexDirection: 'row'
+  },
+  selector: {
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
   absolute: {
     position: 'absolute',
     left: 0,

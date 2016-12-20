@@ -89,7 +89,7 @@ class Home extends React.Component {
         </View>
 
         <View style={{alignItems: 'center'}}>
-          <Text style={{fontSize: 13, fontWeight: '600'}}>🚀 by Rmotr</Text>
+          <Text style={{fontSize: 13, fontWeight: '600'}}>Extended by Rmotr 🚀</Text>
           <Text style={{fontSize: 12}}>Adapted by Jason Brown (browniefed)</Text>
           <Text style={{fontSize: 12}}>Created by Thomas Park</Text>
         </View>

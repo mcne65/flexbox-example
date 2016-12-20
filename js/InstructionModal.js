@@ -30,6 +30,9 @@ class InstructionModal extends React.Component {
             <Text style={styles.level}>
               Level: {this.state.level}
             </Text>
+            <Text style={styles.name}>
+              ({this.props.name})
+            </Text>
 
             <LevelInstruction
               instruction={this.props.instruction}
@@ -82,6 +85,12 @@ let styles = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
     fontWeight: '900',
+    textAlign: 'center',
+  },
+  name: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
     textAlign: 'center',
   },
   closeButton: {

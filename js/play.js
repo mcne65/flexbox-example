@@ -85,8 +85,9 @@ class Play extends React.Component {
       <FlexContainer>
         <InstructionModal
           level={level + 1}
+          name={levels[level].name}
           visible={this.state.modalOpen}
-          language={this.props.language}
+          language={language}
           handleClose={this.toggleHelpModal}
           instruction={instruction}
         />
@@ -104,7 +105,7 @@ class Play extends React.Component {
             values={values}
             before={playLevel.before}
             after={playLevel.after}
-            keys={Object.keys(playLevel.style)}
+            keys={playLevel.finish ? [] : Object.keys(playLevel.style)}
           />
 
           <View style={styles.helpButton}>
