@@ -1,7 +1,7 @@
 {
-  "name": "rmotr-flexboxfroggy",
+  "name": "flexbox-example",
   "description": "A game for learning CSS flexbox",
-  "slug": "rmotr-flexboxfroggy",
+  "slug": "flexbox-example",
   "sdkVersion": "12.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
