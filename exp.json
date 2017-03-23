@@ -1,12 +1,12 @@
 {
-  "name": "flexbox-example",
+  "name": "Flexbox Playground",
   "description": "A game for learning CSS flexbox",
   "slug": "flexbox-example",
   "sdkVersion": "12.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#3A4767",
-  "iconUrl": "https://s13.postimg.org/wflosfalj/logo.png",
+  "iconUrl": "http://i.imgur.com/uPlWf4X.png",
   "notification": {
     "iconUrl": "https://s13.postimg.org/wflosfalj/logo.png",
     "color": "#000000",
@@ -24,5 +24,13 @@
   "androidHideExponentNotificationInShellApp": true,
   "packagerOpts": {
     "assetExts": ["ttf"]
+  },
+
+  /*Deploy configurations */
+  "ios": {
+   "bundleIdentifier": "org.rmotr.exp",
+  },
+  "android": {
+   "package": "org.rmotr.exp",
   }
 }
