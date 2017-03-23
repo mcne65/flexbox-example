@@ -1,6 +1,8 @@
 Flexbox Froggy
 =======
 
+https://exp.host/@rmotr/flexbox-example
+
 Flexbox Froggy is a game for learning CSS flexbox. Check it out at [flexboxfroggy.com](http://flexboxfroggy.com).
 
 Read [this blog post](http://thomaspark.co/2015/11/learning-css-layout-with-flexbox-froggy/) for background on the project.
