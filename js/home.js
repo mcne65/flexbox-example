@@ -15,9 +15,14 @@ class Home extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>
-          {getMessage('title', language)}
-        </Text>
+        <View>
+          <Text style={styles.title}>
+            {getMessage('title', language)}
+          </Text>
+          <Text style={styles.subtitle}>
+            {getMessage('subtitle', language)}
+          </Text>
+        </View>
 
         <View style={styles.frogsContainer}>
           <View style={styles.imageContainer}>
@@ -70,7 +75,9 @@ class Home extends React.Component {
             onPress={onGoToGame}
           >
             <View style={styles.start}>
-              <Text style={styles.startText}>{getMessage('play', language)}</Text>
+              <Text style={styles.startText}>
+                {getMessage('play', language)}
+              </Text>
             </View>
           </TouchableOpacity>
 
@@ -106,6 +113,11 @@ let styles = StyleSheet.create({
     color: 'rgba(255,255,255,.8)',
     textAlign: 'center',
     paddingHorizontal: 10
+  },
+  subtitle: {
+    fontSize: 18,
+    color: 'rgba(255,255,255,.8)',
+    textAlign: 'center'
   },
   frogsContainer: {
     height: 100,

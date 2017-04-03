@@ -79,19 +79,22 @@ var messages = {
     'lt': 'iš'
   },
   title: {
-    'en': 'Flexbox Froggy - A game for learning CSS flexbox',
-    'de': 'Flexbox Froggy - Ein Spiel, um CSS flexbox zu lernen',
-    'fr': 'Flexbox Froggy - Un jeu pour apprendre les flexbox CSS',
-    'pt-br': 'Flexbox Froggy - Um jogo para aprender CSS flexbox',
-    'es': 'Flexbox Froggy - Un juego para aprender CSS flexbox',
-    'ru': 'Flexbox Froggy - Игра для изучения CSS Flexbox',
+    'en': 'Flexbox Playground',
+    'de': 'Flexbox Playground - Ein Spiel, um CSS flexbox zu lernen',
+    'fr': 'Flexbox Playground - Un jeu pour apprendre les flexbox CSS',
+    'pt-br': 'Flexbox Playground - Um jogo para aprender CSS flexbox',
+    'es': 'Flexbox Playground - Un juego para aprender CSS flexbox',
+    'ru': 'Flexbox Playground - Игра для изучения CSS Flexbox',
     'fa': 'قورباغه فلکس باکس - یک بازی جذاب برای آموزش سی اس اس فلکس باکس',
-    'zh-cn': 'Flexbox Froggy - 一个用来学CSS flexbox的游戏',
-    'tr': 'Flexbox Froggy - CSS flexbox için öğretici oyun',
-    'it': 'Flexbox Froggy - Un gioco per imparare CSS flexbox',
+    'zh-cn': 'Flexbox Playground - 一个用来学CSS flexbox的游戏',
+    'tr': 'Flexbox Playground - CSS flexbox için öğretici oyun',
+    'it': 'Flexbox Playground - Un gioco per imparare CSS flexbox',
     'fa': 'قورباغه فلکس باکس - یک باز برای آموزش سی اس اس فبکس باکس',
-    'ko': 'Flexbox Froggy - CSS flexbox 속성 배우기 게임',
-    'lt': 'Flexbox Froggy - Žaidimas padėsiantis perprasti CSS "flexbox" metodiką'
+    'ko': 'Flexbox Playground - CSS flexbox 속성 배우기 게임',
+    'lt': 'Flexbox Playground - Žaidimas padėsiantis perprasti CSS "flexbox" metodiką'
+  },
+  subtitle: {
+    'en': 'A game for learning CSS flexbox'
   },
   labelReset: {
     'en': 'Reset',
