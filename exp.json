@@ -28,9 +28,9 @@
 
   /*Deploy configurations */
   "ios": {
-   "bundleIdentifier": "org.rmotr.exp",
+   "bundleIdentifier": "com.rmotr.exp",
   },
   "android": {
-   "package": "org.rmotr.exp",
+   "package": "com.rmotr.exp",
   }
 }
